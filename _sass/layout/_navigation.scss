@@ -196,12 +196,12 @@
     justify-content: flex-end;
     align-items: center;
     margin-left: auto;
-    flex-wrap: nowrap;  /* Prevent wrapping */
+    flex-wrap: wrap;  /* Allow wrapping */
 
     li {
       display: inline-block;
       vertical-align: middle;
-      white-space: nowrap;  /* Prevent text wrapping */
+      white-space: nowrap;
 
       &:first-child {
         font-weight: bold;

@@ -70,9 +70,7 @@ author_profile: true
 
 ## 🔬 Research Interests
 
-<div style="background: #fff; padding: 2em; border-radius: 15px; margin: 1em 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #4facfe;">
-
-<div style="color: #2c3e50; line-height: 1.8;">
+<div style="color: #2c3e50; line-height: 1.8; margin: 1em 0;">
 
 My research journey began with a <strong>game-theoretic perspective</strong> of machine learning. As data increasingly becomes the fuel that powers large-scale ML models, it is imperative to effectively <strong>value, curate, and attribute data</strong> to make modern ML systems more reliable, fair, and efficient.
 
@@ -81,8 +79,6 @@ My initial research focus was on estimating the value of data in machine learnin
 2. How can we evaluate the value of data in privacy-preserving ML settings?
 
 With the advent of <strong>Large Language Models (LLMs)</strong>, my research interests have gradually shifted toward understanding the "data" aspects of LLMs. Instead of focusing solely on pre-training data, I now concentrate on post-training aspects including reinforcement fine-tuning, prompt optimization, and inference speedups.
-
-</div>
 
 </div>
 

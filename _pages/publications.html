@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Publications"
+<!-- title: "Publications" -->
 permalink: /publications/
 author_profile: true
 ---
@@ -10,15 +10,12 @@ author_profile: true
   <p style="font-size: 1em; color: #34495e; line-height: 1.6;">
     Here you can find my research publications across various venues in machine learning, AI, and data science.
   </p>
+  {% if site.author.googlescholar %}
+  <p style="margin: 0; font-size: 1.1em; color: #2c3e50;">
+    🔍 You can also find my articles on <a href="{{site.author.googlescholar}}" style="color: #4285f4; text-decoration: none; font-weight: bold;">my Google Scholar profile</a>.
+  </p>
+  {% endif %}
 </div>
-
-{% if site.author.googlescholar %}
-  <div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #4285f4; margin: 2em 0; text-align: center;">
-    <p style="margin: 0; font-size: 1.1em; color: #2c3e50;">
-      🔍 You can also find my articles on <a href="{{site.author.googlescholar}}" style="color: #4285f4; text-decoration: none; font-weight: bold;">my Google Scholar profile</a>.
-    </p>
-  </div>
-{% endif %}
 
 {% include base_path %}
 

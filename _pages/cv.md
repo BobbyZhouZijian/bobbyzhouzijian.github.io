@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+# title: "CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -26,7 +26,7 @@ redirect_from:
       <td style="padding: 0.8em;">2023 – present</td>
     </tr>
     <tr>
-      <td style="padding: 0.8em;"><strong>B.Comp. (Hons) in Computer Science</strong></td>
+      <td style="padding: 0.8em;"><strong>B.Comp. (1st Class Hons) in Computer Science</strong></td>
       <td style="padding: 0.8em;">National University of Singapore</td>
       <td style="padding: 0.8em;">2019 – 2023</td>
     </tr>
@@ -61,15 +61,6 @@ redirect_from:
 
 ---
 
-## Research Interests
-
-- **Machine Learning**: Data valuation, model interpretability, fairness in AI
-- **Large Language Models**: In-context learning, speculative decoding, data-centric AI
-- **Privacy-Preserving ML**: Differential privacy, federated learning
-- **Optimization**: Gradient-based methods, active learning algorithms
-
----
-
 ## Publications
 
 <ul>{% for post in site.publications reversed %}
@@ -80,43 +71,30 @@ redirect_from:
 
 ## Honors and Awards
 
-- **Outstanding Graduate Student Award**, Computer Science Department, 2024
-- **Best Paper Award**, AAAI 2023 (for "Probably Approximate Shapley Fairness")
-- **Graduate Fellowship**, University Name, 2021-2024
-- **Dean's List**, University Name, 2017-2019
-
----
-
-## Technical Skills
-
-**Programming Languages**: Python, C++, Java, JavaScript, R  
-**ML/AI Frameworks**: PyTorch, TensorFlow, Hugging Face, scikit-learn  
-**Tools & Technologies**: Git, Docker, AWS, GCP, Jupyter, LaTeX  
-**Databases**: PostgreSQL, MongoDB, Redis  
+- **Research Achievement Award**, National University of Singapore, 2024
+- **Google Travel Grant**, AAAI 2023 (for "Probably Approximate Shapley Fairness")
+- **Dean's List**, National University of Singapore, 2019-2022
+- **NUS Science and Technology Scholarship**: NUS, 2019-2023
 
 ---
 
 ## Professional Service
 
 **Conference Reviewing**
-- NeurIPS (2023, 2024), ICML (2024), AAAI (2023, 2024)
-- EMNLP (2024), ACL (2024, 2025)
-
-**Workshop Organization**
-- Co-organizer, Workshop on Data-Centric AI, NeurIPS 2024
+- NeurIPS (2025)
 
 ---
-
+<!-- 
 ## Talks and Presentations
 
 <ul>{% for post in site.talks reversed %}
   {% include archive-single-talk-cv.html  %}
 {% endfor %}</ul>
 
----
-
+--- -->
+<!-- 
 ## Teaching Experience
 
 <ul>{% for post in site.teaching reversed %}
   {% include archive-single-cv.html %}
-{% endfor %}</ul>
+{% endfor %}</ul> -->

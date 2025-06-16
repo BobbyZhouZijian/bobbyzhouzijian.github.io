@@ -161,137 +161,175 @@ author_profile: true
 }
 </style>
 
-<script>
-function toggleBibtex(publicationId, bibtexUrl) {
-  const dropdown = document.getElementById('bibtex-dropdown-' + publicationId);
-  const content = document.getElementById('bibtex-content-' + publicationId);
+<script type="text/javascript">
+// Wrap everything in an IIFE to avoid global scope pollution
+(function() {
+  'use strict';
   
-  if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-    // Show dropdown
-    dropdown.style.display = 'block';
+  console.log('BibTeX script loading...');
+  
+  // Make functions global so they can be called from onclick handlers
+  window.toggleBibtex = function(publicationId, bibtexUrl) {
+    console.log('toggleBibtex called with:', publicationId, bibtexUrl);
     
-    // Load BibTeX content if not already loaded
-    if (content.value === '') {
-      content.value = 'Loading...';
+    const dropdown = document.getElementById('bibtex-dropdown-' + publicationId);
+    const content = document.getElementById('bibtex-content-' + publicationId);
+    
+    if (!dropdown || !content) {
+      console.error('Could not find elements for publication:', publicationId);
+      return;
+    }
+    
+    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+      // Show dropdown
+      dropdown.style.display = 'block';
       
-      // Try to fetch the BibTeX content
-      fetch(bibtexUrl)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.text();
-        })
-        .then(data => {
-          content.value = data;
-        })
-        .catch(error => {
-          console.error('Error loading BibTeX:', error);
-          // Fallback: provide a message with the URL
-          content.value = `Error loading BibTeX content automatically. 
+      // Load BibTeX content if not already loaded
+      if (content.value === '') {
+        content.value = 'Loading...';
+        
+        // Try to fetch the BibTeX content
+        fetch(bibtexUrl)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+          })
+          .then(data => {
+            content.value = data;
+            console.log('BibTeX content loaded successfully');
+          })
+          .catch(error => {
+            console.error('Error loading BibTeX:', error);
+            // Fallback: provide a message with the URL
+            content.value = `Error loading BibTeX content automatically. 
 Please visit the following URL to download the BibTeX file:
 ${bibtexUrl}
 
 Or copy this URL to your browser:
 ${bibtexUrl}`;
-        });
-    }
-  } else {
-    // Hide dropdown
-    dropdown.style.display = 'none';
-  }
-}
-
-function copyBibtex(publicationId) {
-  const content = document.getElementById('bibtex-content-' + publicationId);
-  
-  // Check if content is loaded
-  if (content.value === '' || content.value === 'Loading...') {
-    alert('Please wait for the BibTeX content to load first, or click the BibTeX button to load it.');
-    return;
-  }
-  
-  // Use modern Clipboard API if available
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(content.value).then(() => {
-      showCopyFeedback(event.target, 'Copied!');
-    }).catch(err => {
-      console.error('Failed to copy: ', err);
-      // Fallback to selection method
-      fallbackCopy(content, event.target);
-    });
-  } else {
-    // Fallback for older browsers or non-secure contexts
-    fallbackCopy(content, event.target);
-  }
-}
-
-function fallbackCopy(content, button) {
-  try {
-    content.select();
-    content.setSelectionRange(0, 99999); // For mobile devices
-    
-    // Try the deprecated method as fallback
-    const successful = document.execCommand('copy');
-    if (successful) {
-      showCopyFeedback(button, 'Copied!');
+          });
+      }
     } else {
-      showCopyFeedback(button, 'Copy failed - please select and copy manually');
+      // Hide dropdown
+      dropdown.style.display = 'none';
     }
-  } catch (err) {
-    console.error('Fallback copy failed: ', err);
-    showCopyFeedback(button, 'Please select and copy manually');
-  }
-}
+  };
 
-function showCopyFeedback(button, message) {
-  const originalText = button.textContent;
-  button.textContent = message;
-  setTimeout(() => {
-    button.textContent = originalText;
-  }, 2000);
-}
+  window.copyBibtex = function(publicationId) {
+    console.log('copyBibtex called with:', publicationId);
+    
+    const content = document.getElementById('bibtex-content-' + publicationId);
+    
+    if (!content) {
+      console.error('Could not find content element for publication:', publicationId);
+      return;
+    }
+    
+    // Check if content is loaded
+    if (content.value === '' || content.value === 'Loading...') {
+      alert('Please wait for the BibTeX content to load first, or click the BibTeX button to load it.');
+      return;
+    }
+    
+    // Use modern Clipboard API if available
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(content.value).then(() => {
+        showCopyFeedback(event.target, 'Copied!');
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        // Fallback to selection method
+        fallbackCopy(content, event.target);
+      });
+    } else {
+      // Fallback for older browsers or non-secure contexts
+      fallbackCopy(content, event.target);
+    }
+  };
 
-function downloadBibtex(publicationId, filename) {
-  const content = document.getElementById('bibtex-content-' + publicationId);
-  
-  if (content.value === '' || content.value === 'Loading...') {
-    alert('Please wait for the BibTeX content to load first, or try clicking the BibTeX button to load it.');
-    return;
-  }
-  
-  try {
-    const blob = new Blob([content.value], { type: 'text/plain;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename || 'citation.bib';
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
-  } catch (error) {
-    console.error('Download failed:', error);
-    alert('Download failed. Please copy the content manually.');
-  }
-}
+  window.downloadBibtex = function(publicationId, filename) {
+    console.log('downloadBibtex called with:', publicationId, filename);
+    
+    const content = document.getElementById('bibtex-content-' + publicationId);
+    
+    if (!content) {
+      console.error('Could not find content element for publication:', publicationId);
+      return;
+    }
+    
+    if (content.value === '' || content.value === 'Loading...') {
+      alert('Please wait for the BibTeX content to load first, or try clicking the BibTeX button to load it.');
+      return;
+    }
+    
+    try {
+      const blob = new Blob([content.value], { type: 'text/plain;charset=utf-8' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename || 'citation.bib';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+      console.log('Download initiated successfully');
+    } catch (error) {
+      console.error('Download failed:', error);
+      alert('Download failed. Please copy the content manually.');
+    }
+  };
 
-// Add error handling for when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-  // Check if we're in a secure context for clipboard operations
-  if (!navigator.clipboard && location.protocol !== 'https:' && location.hostname !== 'localhost') {
-    console.warn('Clipboard API not available. Copy functionality may be limited.');
+  function fallbackCopy(content, button) {
+    try {
+      content.select();
+      content.setSelectionRange(0, 99999); // For mobile devices
+      
+      // Try the deprecated method as fallback
+      const successful = document.execCommand('copy');
+      if (successful) {
+        showCopyFeedback(button, 'Copied!');
+      } else {
+        showCopyFeedback(button, 'Copy failed - please select and copy manually');
+      }
+    } catch (err) {
+      console.error('Fallback copy failed: ', err);
+      showCopyFeedback(button, 'Please select and copy manually');
+    }
   }
-  
-  // Add click event listeners to all BibTeX buttons for debugging
-  const bibtexButtons = document.querySelectorAll('button.bibtex');
-  bibtexButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      console.log('BibTeX button clicked:', e.target);
+
+  function showCopyFeedback(button, message) {
+    const originalText = button.textContent;
+    button.textContent = message;
+    setTimeout(() => {
+      button.textContent = originalText;
+    }, 2000);
+  }
+
+  // Add error handling for when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing BibTeX functionality...');
+    
+    // Check if we're in a secure context for clipboard operations
+    if (!navigator.clipboard && location.protocol !== 'https:' && location.hostname !== 'localhost') {
+      console.warn('Clipboard API not available. Copy functionality may be limited.');
+    }
+    
+    // Add click event listeners to all BibTeX buttons for debugging
+    const bibtexButtons = document.querySelectorAll('button.bibtex');
+    console.log('Found', bibtexButtons.length, 'BibTeX buttons');
+    
+    bibtexButtons.forEach((button, index) => {
+      console.log('Button', index, ':', button);
+      button.addEventListener('click', function(e) {
+        console.log('BibTeX button clicked:', e.target);
+      });
     });
   });
-});
+  
+  console.log('BibTeX script loaded successfully');
+})();
 </script>
 
 <!-- New style rendering if publication categories are defined -->

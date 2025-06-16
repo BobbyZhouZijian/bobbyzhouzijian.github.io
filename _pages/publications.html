@@ -161,14 +161,96 @@ author_profile: true
 }
 </style>
 
+<!-- New style rendering if publication categories are defined -->
+{% if site.publication_category %}
+  {% for category in site.publication_category  %}
+    {% assign title_shown = false %}
+    {% for post in site.publications reversed %}
+      {% if post.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <div class="category-header">
+          <h2>{{ category[1].title }}</h2>
+        </div>
+        {% assign title_shown = true %}
+      {% endunless %}
+      
+      <div class="publication-item">
+        <h3>{{ post.title }}</h3>
+        {% if post.venue %}
+          <div class="venue">{{ post.venue }}</div>
+        {% endif %}
+        {% if post.excerpt %}
+          <div class="excerpt">{{ post.excerpt | markdownify }}</div>
+        {% endif %}
+        <div class="links">
+          {% if post.paperurl %}
+            <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
+          {% endif %}
+          {% if post.bibtexurl %}
+            {% assign pub_id = post.title | slugify %}
+            <button class="bibtex" onclick="toggleBibtex('{{ pub_id }}', '{{ post.bibtexurl }}')">📋 BibTeX</button>
+          {% endif %}
+          {% if post.slidesurl %}
+            <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
+          {% endif %}
+          <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
+        </div>
+        {% if post.bibtexurl %}
+          <div id="bibtex-dropdown-{{ post.title | slugify }}" class="bibtex-dropdown">
+            <textarea id="bibtex-content-{{ post.title | slugify }}" class="bibtex-content" readonly></textarea>
+            <div class="bibtex-actions">
+              <button onclick="copyBibtex('{{ post.title | slugify }}')">📋 Copy</button>
+              <button onclick="downloadBibtex('{{ post.title | slugify }}', '{{ post.title | slugify }}.bib')">💾 Download</button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for post in site.publications reversed %}
+    <div class="publication-item">
+      <h3>{{ post.title }}</h3>
+      {% if post.venue %}
+        <div class="venue">{{ post.venue }}</div>
+      {% endif %}
+      {% if post.excerpt %}
+        <div class="excerpt">{{ post.excerpt | markdownify }}</div>
+      {% endif %}
+      <div class="links">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
+        {% endif %}
+        {% if post.bibtexurl %}
+          {% assign pub_id = post.title | slugify %}
+          <button class="bibtex" onclick="toggleBibtex('{{ pub_id }}', '{{ post.bibtexurl }}')">📋 BibTeX</button>
+        {% endif %}
+        {% if post.slidesurl %}
+          <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
+        {% endif %}
+        <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
+      </div>
+      {% if post.bibtexurl %}
+        <div id="bibtex-dropdown-{{ post.title | slugify }}" class="bibtex-dropdown">
+          <textarea id="bibtex-content-{{ post.title | slugify }}" class="bibtex-content" readonly></textarea>
+          <div class="bibtex-actions">
+            <button onclick="copyBibtex('{{ post.title | slugify }}')">📋 Copy</button>
+            <button onclick="downloadBibtex('{{ post.title | slugify }}', '{{ post.title | slugify }}.bib')">💾 Download</button>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endif %}
+
 <script type="text/javascript">
-// Wrap everything in an IIFE to avoid global scope pollution
-(function() {
-  'use strict';
+// Ensure script runs after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('BibTeX script initializing...');
   
-  console.log('BibTeX script loading...');
-  
-  // Make functions global so they can be called from onclick handlers
+  // Define functions in global scope
   window.toggleBibtex = function(publicationId, bibtexUrl) {
     console.log('toggleBibtex called with:', publicationId, bibtexUrl);
     
@@ -177,6 +259,7 @@ author_profile: true
     
     if (!dropdown || !content) {
       console.error('Could not find elements for publication:', publicationId);
+      console.log('Looking for:', 'bibtex-dropdown-' + publicationId, 'bibtex-content-' + publicationId);
       return;
     }
     
@@ -307,114 +390,22 @@ ${bibtexUrl}`;
     }, 2000);
   }
 
-  // Add error handling for when the page loads
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing BibTeX functionality...');
-    
-    // Check if we're in a secure context for clipboard operations
-    if (!navigator.clipboard && location.protocol !== 'https:' && location.hostname !== 'localhost') {
-      console.warn('Clipboard API not available. Copy functionality may be limited.');
-    }
-    
-    // Add click event listeners to all BibTeX buttons for debugging
-    const bibtexButtons = document.querySelectorAll('button.bibtex');
-    console.log('Found', bibtexButtons.length, 'BibTeX buttons');
-    
-    bibtexButtons.forEach((button, index) => {
-      console.log('Button', index, ':', button);
-      button.addEventListener('click', function(e) {
-        console.log('BibTeX button clicked:', e.target);
-      });
-    });
+  // Check if we're in a secure context for clipboard operations
+  if (!navigator.clipboard && location.protocol !== 'https:' && location.hostname !== 'localhost') {
+    console.warn('Clipboard API not available. Copy functionality may be limited.');
+  }
+  
+  // Find and log all BibTeX buttons for debugging
+  const bibtexButtons = document.querySelectorAll('button.bibtex');
+  console.log('Found', bibtexButtons.length, 'BibTeX buttons');
+  
+  bibtexButtons.forEach((button, index) => {
+    console.log('Button', index, ':', button.outerHTML);
   });
   
   console.log('BibTeX script loaded successfully');
-})();
+});
 </script>
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <div class="category-header">
-          <h2>{{ category[1].title }}</h2>
-        </div>
-        {% assign title_shown = true %}
-      {% endunless %}
-      
-      <div class="publication-item">
-        <h3>{{ post.title }}</h3>
-        {% if post.venue %}
-          <div class="venue">{{ post.venue }}</div>
-        {% endif %}
-        {% if post.excerpt %}
-          <div class="excerpt">{{ post.excerpt | markdownify }}</div>
-        {% endif %}
-        <div class="links">
-          {% if post.paperurl %}
-            <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
-          {% endif %}
-          {% if post.bibtexurl %}
-            {% assign pub_id = post.title | slugify %}
-            <button class="bibtex" onclick="toggleBibtex('{{ pub_id }}', '{{ post.bibtexurl }}')">📋 BibTeX</button>
-          {% endif %}
-          {% if post.slidesurl %}
-            <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
-          {% endif %}
-          <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
-        </div>
-        {% if post.bibtexurl %}
-          <div id="bibtex-dropdown-{{ post.title | slugify }}" class="bibtex-dropdown">
-            <textarea id="bibtex-content-{{ post.title | slugify }}" class="bibtex-content" readonly></textarea>
-            <div class="bibtex-actions">
-              <button onclick="copyBibtex('{{ post.title | slugify }}')">📋 Copy</button>
-              <button onclick="downloadBibtex('{{ post.title | slugify }}', '{{ post.title | slugify }}.bib')">💾 Download</button>
-            </div>
-          </div>
-        {% endif %}
-      </div>
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    <div class="publication-item">
-      <h3>{{ post.title }}</h3>
-      {% if post.venue %}
-        <div class="venue">{{ post.venue }}</div>
-      {% endif %}
-      {% if post.excerpt %}
-        <div class="excerpt">{{ post.excerpt | markdownify }}</div>
-      {% endif %}
-      <div class="links">
-        {% if post.paperurl %}
-          <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
-        {% endif %}
-        {% if post.bibtexurl %}
-          {% assign pub_id = post.title | slugify %}
-          <button class="bibtex" onclick="toggleBibtex('{{ pub_id }}', '{{ post.bibtexurl }}')">📋 BibTeX</button>
-        {% endif %}
-        {% if post.slidesurl %}
-          <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
-        {% endif %}
-        <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
-      </div>
-      {% if post.bibtexurl %}
-        <div id="bibtex-dropdown-{{ post.title | slugify }}" class="bibtex-dropdown">
-          <textarea id="bibtex-content-{{ post.title | slugify }}" class="bibtex-content" readonly></textarea>
-          <div class="bibtex-actions">
-            <button onclick="copyBibtex('{{ post.title | slugify }}')">📋 Copy</button>
-            <button onclick="downloadBibtex('{{ post.title | slugify }}', '{{ post.title | slugify }}.bib')">💾 Download</button>
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  {% endfor %}
-{% endif %}
 
 
 

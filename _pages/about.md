@@ -6,11 +6,11 @@ author_profile: true
 ---
 
 <div style="text-align: center; margin-bottom: 2em;">
-  <h2 style="color: #2c3e50; font-size: 2.5em; margin-bottom: 0.5em;">👋 Nice to meet you!</h2>
-  <p style="font-size: 1.2em; color: #2c3e50; line-height: 1.6;">
+  <h2 style="color: #2c3e50; font-size: 2.2em; margin-bottom: 0.5em;">👋 Nice to meet you!</h2>
+  <p style="font-size: 1.1em; color: #2c3e50; line-height: 1.6;">
     My name is <strong>Zijian</strong>. I am a second-year PhD candidate advised by <strong>Bryan Kian Hsiang Low</strong> at NUS. 
-    I am currently also a research engineer at Singapore-MIT Alliance for Research and Technology Centre (SMART) 
-    advised by <strong>Daniela Rus</strong> at MIT.
+    I am currently also a research engineer at Singapore-MIT Alliance for Research and Technology Centre (SMART), 
+    advised by <strong>Daniela Rus</strong> at MIT. Prior to that, I completed my undergraduate studies at NUS, majoring in Computer Science and Mathematics. I also interned at TikTok (Singapore) as an ML engineer for a year on the content moderation team.
   </p>
 </div>
 
@@ -55,10 +55,11 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 
 </div>
 
-<div style="text-align: center; margin-top: 3em;">
-  <h3 style="color: #3498db; margin-bottom: 1em;">🌟 Let's Connect!</h3>
+## 🌟 Let's Connect!
+
+<div style="text-align: left; margin-top: 3em;">
   <p style="color: #2c3e50; font-size: 1.1em; margin: 0;">
-    I'm always excited to discuss research ideas, collaborate on projects, or simply chat about the fascinating world of AI and machine learning.
+    I'm always excited to discuss research ideas, collaborate on projects, or simply chat about the fascinating world of AI and machine learning. Welcome to connect me on email, linkedin, or X (twitter) and let's chat!
   </p>
 </div>
 

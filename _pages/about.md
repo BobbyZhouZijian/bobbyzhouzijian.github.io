@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "About"
+# title: "About"
 permalink: /about/
 author_profile: true
 ---
@@ -18,57 +18,53 @@ author_profile: true
 
 ## 🎓 Education
 
-<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #667eea; margin: 1em 0;">
-  <table style="width: 100%; color: #2c3e50;">
-    <thead>
-      <tr style="border-bottom: 2px solid #ecf0f1;">
-        <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">🎯 Degree</th>
-        <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">🏛️ Institution</th>
-        <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">📅 Years</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 0.8em;"><strong>Ph.D. in Computer Science</strong></td>
-        <td style="padding: 0.8em;">National University of Singapore</td>
-        <td style="padding: 0.8em;">2023 – present</td>
-      </tr>
-      <tr>
-        <td style="padding: 0.8em;"><strong>B.Comp. (Hons) in Computer Science</strong></td>
-        <td style="padding: 0.8em;">National University of Singapore</td>
-        <td style="padding: 0.8em;">2019 – 2023</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
+  <thead>
+    <tr style="border-bottom: 2px solid #ecf0f1;">
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">🎯 Degree</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">🏛️ Institution</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">📅 Years</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 0.8em;"><strong>Ph.D. in Computer Science</strong></td>
+      <td style="padding: 0.8em;">National University of Singapore</td>
+      <td style="padding: 0.8em;">2023 – present</td>
+    </tr>
+    <tr>
+      <td style="padding: 0.8em;"><strong>B.Comp. (Hons) in Computer Science</strong></td>
+      <td style="padding: 0.8em;">National University of Singapore</td>
+      <td style="padding: 0.8em;">2019 – 2023</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
 ## 💼 Experience
 
-<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #f093fb; margin: 1em 0;">
-  <table style="width: 100%; color: #2c3e50;">
-    <thead>
-      <tr style="border-bottom: 2px solid #ecf0f1;">
-        <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">💡 Position</th>
-        <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">🏢 Institution</th>
-        <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">📅 Years</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 0.8em;"><strong>Research Engineer</strong></td>
-        <td style="padding: 0.8em;">Singapore-MIT Alliance for Research and Technology Centre (SMART)</td>
-        <td style="padding: 0.8em;">Aug 2023 – present</td>
-      </tr>
-      <tr>
-        <td style="padding: 0.8em;"><strong>ML Engineer Intern</strong></td>
-        <td style="padding: 0.8em;">TikTok</td>
-        <td style="padding: 0.8em;">Mar 2021 – Mar 2022</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
+  <thead>
+    <tr style="border-bottom: 2px solid #ecf0f1;">
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">💡 Position</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">🏢 Institution</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">📅 Years</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 0.8em;"><strong>Research Engineer</strong></td>
+      <td style="padding: 0.8em;">Singapore-MIT Alliance for Research and Technology Centre (SMART)</td>
+      <td style="padding: 0.8em;">Aug 2023 – present</td>
+    </tr>
+    <tr>
+      <td style="padding: 0.8em;"><strong>ML Engineer Intern</strong></td>
+      <td style="padding: 0.8em;">TikTok</td>
+      <td style="padding: 0.8em;">Mar 2021 – Mar 2022</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -92,32 +88,32 @@ With the advent of **Large Language Models (LLMs)**, my research interests have 
 
 ### 🎯 Current Research Focus Areas
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5em; margin: 2em 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5em; margin: 2em 0; align-items: stretch;">
 
-<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c;">
+<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c; display: flex; flex-direction: column;">
   <h4 style="color: #e74c3c; margin-top: 0;">🚀 Reinforcement Fine-tuning</h4>
-  <p style="line-height: 1.6; color: #2c3e50;">
+  <p style="line-height: 1.6; color: #2c3e50; flex-grow: 1;">
     Past research has demonstrated the effectiveness of reinforcement learning in improving LLM performance, including aligning with human preferences and strengthening reasoning capabilities. To achieve effective RL, a critical ingredient is learning the policy on trajectories that meet desired outcomes. An interesting problem is how to generate high-quality trajectories to make learning more efficient or enable agents to learn harder tasks.
   </p>
 </div>
 
-<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #3498db;">
+<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #3498db; display: flex; flex-direction: column;">
   <h4 style="color: #3498db; margin-top: 0;">💬 Prompt Optimization</h4>
-  <p style="line-height: 1.6; color: #2c3e50;">
+  <p style="line-height: 1.6; color: #2c3e50; flex-grow: 1;">
     A newly emerged paradigm in LLMs is using prompts to alter model behavior or inject new knowledge through in-context learning (ICL). In ICL, task demonstrations are supplied in prompts so LLMs can learn during inference. This paradigm is analogous to classic ML training, where task demonstrations are like training samples. A natural research question is how to evaluate and interpret these demonstrations in the inference-time context.
   </p>
 </div>
 
-<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #2ecc71;">
+<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #2ecc71; display: flex; flex-direction: column;">
   <h4 style="color: #2ecc71; margin-top: 0;">⚡ Speculative Decoding</h4>
-  <p style="line-height: 1.6; color: #2c3e50;">
+  <p style="line-height: 1.6; color: #2c3e50; flex-grow: 1;">
     Speculative decoding speeds up next token generation by employing a draft model to quickly speculate future tokens, then letting the target model verify them in parallel. We can treat the draft model as a <em>data generator</em> and the target model as a <em>data consumer</em>. Similar to data selection in ML training, we can carefully select draft tokens most likely to be accepted, or have the drafter generate many tokens and select the most probable ones for verification.
   </p>
 </div>
 
 </div>
 
-<div style="background: #fff; padding: 2em; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #9b59b6; text-align: center; margin-top: 3em;">
+<div style="text-align: center; margin-top: 3em;">
   <h3 style="color: #9b59b6; margin-bottom: 1em;">🌟 Let's Connect!</h3>
   <p style="color: #2c3e50; font-size: 1.1em; margin: 0;">
     I'm always excited to discuss research ideas, collaborate on projects, or simply chat about the fascinating world of AI and machine learning.

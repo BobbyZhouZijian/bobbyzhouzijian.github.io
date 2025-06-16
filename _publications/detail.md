@@ -3,7 +3,7 @@ title: "DETAIL: Task DEmonsTration Attribution for Interpretable In-context Lear
 collection: publications
 category: conferences
 permalink: /publication/detail
-excerpt: '<img src="/images/detail_gif.gif" alt="DETAIL Algorithm Demo" style="width: 100%; max-width: 500px; height: auto; margin: 15px auto; display: block; border-radius: 8px;">'
+excerpt: '<img src="/images/detail_gif.gif" alt="DETAIL Algorithm Demo" style="width: 100%; height: auto; margin: 1px auto; display: block; border-radius: 8px;">'
 date: 2024-05-22
 venue: 'NeurIPS 2024'
 paperurl: 'https://arxiv.org/pdf/2405.14899'

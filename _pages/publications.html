@@ -5,11 +5,113 @@ permalink: /publications/
 author_profile: true
 ---
 
+<div style="text-align: center; margin-bottom: 2em;">
+  <h2 style="color: #2c3e50; font-size: 2.5em; margin-bottom: 0.5em;">📚 Publications</h2>
+  <p style="font-size: 1.2em; color: #34495e; line-height: 1.6;">
+    Here you can find my research publications across various venues in machine learning, AI, and data science.
+  </p>
+</div>
+
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #4285f4; margin: 2em 0; text-align: center;">
+    <p style="margin: 0; font-size: 1.1em; color: #2c3e50;">
+      🔍 You can also find my articles on <a href="{{site.author.googlescholar}}" style="color: #4285f4; text-decoration: none; font-weight: bold;">my Google Scholar profile</a>.
+    </p>
+  </div>
 {% endif %}
 
 {% include base_path %}
+
+<style>
+.publication-item {
+  background: #fff;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-left: 5px solid #3498db;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.publication-item h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+  line-height: 1.4;
+}
+
+.publication-item .venue {
+  color: #3498db;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.publication-item .excerpt {
+  color: #34495e;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.publication-item .links {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.publication-item .links a {
+  background: #3498db;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.publication-item .links a:hover {
+  background: #2980b9;
+}
+
+.publication-item .links a.bibtex {
+  background: #e74c3c;
+}
+
+.publication-item .links a.bibtex:hover {
+  background: #c0392b;
+}
+
+.publication-item .links a.slides {
+  background: #f39c12;
+}
+
+.publication-item .links a.slides:hover {
+  background: #e67e22;
+}
+
+.category-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  margin: 2em 0 1em 0;
+  text-align: center;
+}
+
+.category-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+</style>
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
@@ -20,15 +122,68 @@ author_profile: true
         {% continue %}
       {% endif %}
       {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
+        <div class="category-header">
+          <h2>
+            {% if category[0] == 'conferences' %}
+              🎤 {{ category[1].title }}
+            {% elsif category[0] == 'manuscripts' %}
+              📄 {{ category[1].title }}
+            {% elsif category[0] == 'workshops' %}
+              🛠️ {{ category[1].title }}
+            {% else %}
+              📚 {{ category[1].title }}
+            {% endif %}
+          </h2>
+        </div>
         {% assign title_shown = true %}
       {% endunless %}
-      {% include archive-single.html %}
+      
+      <div class="publication-item">
+        <h3>{{ post.title }}</h3>
+        {% if post.venue %}
+          <div class="venue">{{ post.venue }}</div>
+        {% endif %}
+        {% if post.excerpt %}
+          <div class="excerpt">{{ post.excerpt }}</div>
+        {% endif %}
+        <div class="links">
+          {% if post.paperurl %}
+            <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
+          {% endif %}
+          {% if post.bibtexurl %}
+            <a href="{{ post.bibtexurl }}" class="bibtex" target="_blank">📋 BibTeX</a>
+          {% endif %}
+          {% if post.slidesurl %}
+            <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
+          {% endif %}
+          <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
+        </div>
+      </div>
     {% endfor %}
   {% endfor %}
 {% else %}
   {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+    <div class="publication-item">
+      <h3>{{ post.title }}</h3>
+      {% if post.venue %}
+        <div class="venue">{{ post.venue }}</div>
+      {% endif %}
+      {% if post.excerpt %}
+        <div class="excerpt">{{ post.excerpt }}</div>
+      {% endif %}
+      <div class="links">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
+        {% endif %}
+        {% if post.bibtexurl %}
+          <a href="{{ post.bibtexurl }}" class="bibtex" target="_blank">📋 BibTeX</a>
+        {% endif %}
+        {% if post.slidesurl %}
+          <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
+        {% endif %}
+        <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
+      </div>
+    </div>
   {% endfor %}
 {% endif %}
 

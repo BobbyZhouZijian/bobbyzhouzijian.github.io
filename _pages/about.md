@@ -14,60 +14,6 @@ author_profile: true
   </p>
 </div>
 
----
-
-## 🎓 Education
-
-<table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
-  <thead>
-    <tr style="border-bottom: 2px solid #ecf0f1;">
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🎯 Degree</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🏛️ Institution</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">📅 Years</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 0.8em;"><strong>Ph.D. in Computer Science</strong></td>
-      <td style="padding: 0.8em;">National University of Singapore</td>
-      <td style="padding: 0.8em;">2023 – present</td>
-    </tr>
-    <tr>
-      <td style="padding: 0.8em;"><strong>B.Comp. (Hons) in Computer Science</strong></td>
-      <td style="padding: 0.8em;">National University of Singapore</td>
-      <td style="padding: 0.8em;">2019 – 2023</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-## 💼 Experience
-
-<table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
-  <thead>
-    <tr style="border-bottom: 2px solid #ecf0f1;">
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">💡 Position</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🏢 Institution</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">📅 Years</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 0.8em;"><strong>Research Engineer</strong></td>
-      <td style="padding: 0.8em;">Singapore-MIT Alliance for Research and Technology Centre (SMART)</td>
-      <td style="padding: 0.8em;">Aug 2023 – present</td>
-    </tr>
-    <tr>
-      <td style="padding: 0.8em;"><strong>ML Engineer Intern</strong></td>
-      <td style="padding: 0.8em;">TikTok</td>
-      <td style="padding: 0.8em;">Mar 2021 – Mar 2022</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
 ## 🔬 Research Interests
 
 <div style="color: #2c3e50; line-height: 1.8; margin: 1em 0;">

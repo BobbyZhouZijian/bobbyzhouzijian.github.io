@@ -76,7 +76,7 @@ author_profile: true
   align-items: center;
 }
 
-.publication-item .links a, .publication-item .links button {
+.publication-item .links a {
   background: #3498db;
   color: white;
   padding: 0.5em 1em;
@@ -85,19 +85,17 @@ author_profile: true
   font-size: 0.9em;
   font-weight: bold;
   transition: background 0.2s ease;
-  border: none;
-  cursor: pointer;
 }
 
-.publication-item .links a:hover, .publication-item .links button:hover {
+.publication-item .links a:hover {
   background: #2c3e50;
 }
 
-.publication-item .links a.bibtex, .publication-item .links button.bibtex {
+.publication-item .links a.bibtex {
   background: #e74c3c;
 }
 
-.publication-item .links a.bibtex:hover, .publication-item .links button.bibtex:hover {
+.publication-item .links a.bibtex:hover {
   background: #c0392b;
 }
 
@@ -119,45 +117,6 @@ author_profile: true
   margin: 0;
   font-size: 1.2em;
   font-weight: 600;
-}
-
-.bibtex-dropdown {
-  margin-top: 1em;
-  display: none;
-}
-
-.bibtex-content {
-  width: 100%;
-  min-height: 150px;
-  padding: 1em;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f8f9fa;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9em;
-  resize: vertical;
-  white-space: pre-wrap;
-}
-
-.bibtex-actions {
-  margin-top: 0.5em;
-  display: flex;
-  gap: 0.5em;
-}
-
-.bibtex-actions button {
-  background: #6c757d;
-  color: white;
-  padding: 0.3em 0.8em;
-  border: none;
-  border-radius: 3px;
-  font-size: 0.8em;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.bibtex-actions button:hover {
-  background: #5a6268;
 }
 </style>
 
@@ -189,23 +148,13 @@ author_profile: true
             <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
           {% endif %}
           {% if post.bibtexurl %}
-            {% assign pub_id = post.title | slugify %}
-            <button class="bibtex" onclick="toggleBibtex('{{ pub_id }}', '{{ post.bibtexurl }}')">📋 BibTeX</button>
+            <a href="{{ post.bibtexurl }}" class="bibtex" target="_blank">📋 BibTeX</a>
           {% endif %}
           {% if post.slidesurl %}
             <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
           {% endif %}
           <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
         </div>
-        {% if post.bibtexurl %}
-          <div id="bibtex-dropdown-{{ post.title | slugify }}" class="bibtex-dropdown">
-            <textarea id="bibtex-content-{{ post.title | slugify }}" class="bibtex-content" readonly></textarea>
-            <div class="bibtex-actions">
-              <button onclick="copyBibtex('{{ post.title | slugify }}')">📋 Copy</button>
-              <button onclick="downloadBibtex('{{ post.title | slugify }}', '{{ post.title | slugify }}.bib')">💾 Download</button>
-            </div>
-          </div>
-        {% endif %}
       </div>
     {% endfor %}
   {% endfor %}
@@ -224,188 +173,13 @@ author_profile: true
           <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
         {% endif %}
         {% if post.bibtexurl %}
-          {% assign pub_id = post.title | slugify %}
-          <button class="bibtex" onclick="toggleBibtex('{{ pub_id }}', '{{ post.bibtexurl }}')">📋 BibTeX</button>
+          <a href="{{ post.bibtexurl }}" class="bibtex" target="_blank">📋 BibTeX</a>
         {% endif %}
         {% if post.slidesurl %}
           <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
         {% endif %}
         <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
       </div>
-      {% if post.bibtexurl %}
-        <div id="bibtex-dropdown-{{ post.title | slugify }}" class="bibtex-dropdown">
-          <textarea id="bibtex-content-{{ post.title | slugify }}" class="bibtex-content" readonly></textarea>
-          <div class="bibtex-actions">
-            <button onclick="copyBibtex('{{ post.title | slugify }}')">📋 Copy</button>
-            <button onclick="downloadBibtex('{{ post.title | slugify }}', '{{ post.title | slugify }}.bib')">💾 Download</button>
-          </div>
-        </div>
-      {% endif %}
     </div>
   {% endfor %}
 {% endif %}
-
-<script type="text/javascript">
-// Ensure script runs after DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('BibTeX script initializing...');
-  
-  // Define functions in global scope
-  window.toggleBibtex = function(publicationId, bibtexUrl) {
-    console.log('toggleBibtex called with:', publicationId, bibtexUrl);
-    
-    const dropdown = document.getElementById('bibtex-dropdown-' + publicationId);
-    const content = document.getElementById('bibtex-content-' + publicationId);
-    
-    if (!dropdown || !content) {
-      console.error('Could not find elements for publication:', publicationId);
-      console.log('Looking for:', 'bibtex-dropdown-' + publicationId, 'bibtex-content-' + publicationId);
-      return;
-    }
-    
-    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-      // Show dropdown
-      dropdown.style.display = 'block';
-      
-      // Load BibTeX content if not already loaded
-      if (content.value === '') {
-        content.value = 'Loading...';
-        
-        // Try to fetch the BibTeX content
-        fetch(bibtexUrl)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.text();
-          })
-          .then(data => {
-            content.value = data;
-            console.log('BibTeX content loaded successfully');
-          })
-          .catch(error => {
-            console.error('Error loading BibTeX:', error);
-            // Fallback: provide a message with the URL
-            content.value = `Error loading BibTeX content automatically. 
-Please visit the following URL to download the BibTeX file:
-${bibtexUrl}
-
-Or copy this URL to your browser:
-${bibtexUrl}`;
-          });
-      }
-    } else {
-      // Hide dropdown
-      dropdown.style.display = 'none';
-    }
-  };
-
-  window.copyBibtex = function(publicationId) {
-    console.log('copyBibtex called with:', publicationId);
-    
-    const content = document.getElementById('bibtex-content-' + publicationId);
-    
-    if (!content) {
-      console.error('Could not find content element for publication:', publicationId);
-      return;
-    }
-    
-    // Check if content is loaded
-    if (content.value === '' || content.value === 'Loading...') {
-      alert('Please wait for the BibTeX content to load first, or click the BibTeX button to load it.');
-      return;
-    }
-    
-    // Use modern Clipboard API if available
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(content.value).then(() => {
-        showCopyFeedback(event.target, 'Copied!');
-      }).catch(err => {
-        console.error('Failed to copy: ', err);
-        // Fallback to selection method
-        fallbackCopy(content, event.target);
-      });
-    } else {
-      // Fallback for older browsers or non-secure contexts
-      fallbackCopy(content, event.target);
-    }
-  };
-
-  window.downloadBibtex = function(publicationId, filename) {
-    console.log('downloadBibtex called with:', publicationId, filename);
-    
-    const content = document.getElementById('bibtex-content-' + publicationId);
-    
-    if (!content) {
-      console.error('Could not find content element for publication:', publicationId);
-      return;
-    }
-    
-    if (content.value === '' || content.value === 'Loading...') {
-      alert('Please wait for the BibTeX content to load first, or try clicking the BibTeX button to load it.');
-      return;
-    }
-    
-    try {
-      const blob = new Blob([content.value], { type: 'text/plain;charset=utf-8' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename || 'citation.bib';
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-      console.log('Download initiated successfully');
-    } catch (error) {
-      console.error('Download failed:', error);
-      alert('Download failed. Please copy the content manually.');
-    }
-  };
-
-  function fallbackCopy(content, button) {
-    try {
-      content.select();
-      content.setSelectionRange(0, 99999); // For mobile devices
-      
-      // Try the deprecated method as fallback
-      const successful = document.execCommand('copy');
-      if (successful) {
-        showCopyFeedback(button, 'Copied!');
-      } else {
-        showCopyFeedback(button, 'Copy failed - please select and copy manually');
-      }
-    } catch (err) {
-      console.error('Fallback copy failed: ', err);
-      showCopyFeedback(button, 'Please select and copy manually');
-    }
-  }
-
-  function showCopyFeedback(button, message) {
-    const originalText = button.textContent;
-    button.textContent = message;
-    setTimeout(() => {
-      button.textContent = originalText;
-    }, 2000);
-  }
-
-  // Check if we're in a secure context for clipboard operations
-  if (!navigator.clipboard && location.protocol !== 'https:' && location.hostname !== 'localhost') {
-    console.warn('Clipboard API not available. Copy functionality may be limited.');
-  }
-  
-  // Find and log all BibTeX buttons for debugging
-  const bibtexButtons = document.querySelectorAll('button.bibtex');
-  console.log('Found', bibtexButtons.length, 'BibTeX buttons');
-  
-  bibtexButtons.forEach((button, index) => {
-    console.log('Button', index, ':', button.outerHTML);
-  });
-  
-  console.log('BibTeX script loaded successfully');
-});
-</script>
-
-
-

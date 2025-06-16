@@ -23,9 +23,8 @@ I am particularly interested in how we can **value, curate, and attribute data**
 ---
 
 ## Education
-| Degree | Institution | Years |
-| ------ | ----------- | ----- |
-| **Ph.D. in Computer Science** | National University of Singapore | 2023 – present |
-| **B.Comp. (Hons) in Computer Science** | National University of Singapore | 2019 – 2023 |
-
+|Degree|Institution|Years|
+|---|---|---|
+|**Ph.D. in Computer Science**|National University of Singapore|2023 – present|
+|**B.Comp. (Hons) in Computer Science**|National University of Singapore|2019 – 2023|
 ---

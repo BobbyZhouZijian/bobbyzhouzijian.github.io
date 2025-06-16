@@ -14,9 +14,9 @@ redirect_from:
 <table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
   <thead>
     <tr style="border-bottom: 2px solid #ecf0f1;">
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🎯 Degree</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🏛️ Institution</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">📅 Years</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Degree</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Institution</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Years</th>
     </tr>
   </thead>
   <tbody>
@@ -40,9 +40,9 @@ redirect_from:
 <table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
   <thead>
     <tr style="border-bottom: 2px solid #ecf0f1;">
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">💡 Position</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🏢 Institution</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">📅 Years</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Position</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Institution</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Years</th>
     </tr>
   </thead>
   <tbody>
@@ -74,7 +74,8 @@ redirect_from:
 - **Research Achievement Award**, National University of Singapore, 2024
 - **Google Travel Grant**, AAAI 2023 (for "Probably Approximate Shapley Fairness")
 - **Dean's List**, National University of Singapore, 2019-2022
-- **NUS Science and Technology Scholarship**: NUS, 2019-2023
+- **Outstanding Computing Project Prize**, NUS, 2022
+- **NUS Science and Technology Scholarship**, NUS, 2019-2023
 
 ---
 
@@ -83,7 +84,7 @@ redirect_from:
 **Conference Reviewing**
 - NeurIPS (2025)
 
----
+
 <!-- 
 ## Talks and Presentations
 

@@ -7,7 +7,7 @@ excerpt: 'The Shapley value (SV) is adopted in various scenarios in machine lear
 date: 2022-12-01
 venue: 'AAAI 2023 (Oral)'
 paperurl: 'https://arxiv.org/pdf/2212.00630'
-bibtexurl: 'http://bobbyzhouzijian.github.io/files/pasf.bib'
+bibtexurl: 'https://bobbyzhouzijian.github.io/files/pasf.bib'
 citation: # 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
 ---
 

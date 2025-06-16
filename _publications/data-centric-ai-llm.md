@@ -8,7 +8,7 @@ date: 2024-06-20
 venue: 'EMNLP 2024 Findings'
 slidesurl: # 'http://academicpages.github.io/files/slides2.pdf'
 paperurl: 'https://arxiv.org/pdf/2406.14473'
-bibtexurl: 'http://bobbyzhouzijian.github.io/files/data-centric-ai-llm.bib'
+bibtexurl: 'https://bobbyzhouzijian.github.io/files/data-centric-ai-llm.bib'
 citation: # 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
 ---
 

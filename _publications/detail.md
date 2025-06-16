@@ -7,7 +7,7 @@ excerpt: 'In-context learning (ICL) allows transformer-based language models tha
 date: 2024-05-22
 venue: 'NeurIPS 2024'
 paperurl: 'https://arxiv.org/pdf/2405.14899'
-bibtexurl: 'http://bobbyzhouzijian.github.io/files/detail.bib'
+bibtexurl: 'https://bobbyzhouzijian.github.io/files/detail.bib'
 citation: # 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
 ---
 

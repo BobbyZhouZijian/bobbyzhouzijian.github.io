@@ -15,7 +15,18 @@
   </div>
 
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
+    {% comment %}
+    Split the name if it contains both English and Chinese parts separated by |
+    {% endcomment %}
+    {% if author.name contains '|' %}
+      {% assign name_parts = author.name | split: '|' %}
+      <h3 class="author__name">
+        <span class="author__name-english">{{ name_parts[0] | strip }}</span>
+        <span class="author__name-chinese">{{ name_parts[1] | strip }}</span>
+      </h3>
+    {% else %}
+      <h3 class="author__name">{{ author.name }}</h3>
+    {% endif %}
     {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
     {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
   </div>

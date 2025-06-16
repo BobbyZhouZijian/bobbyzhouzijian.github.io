@@ -41,3 +41,33 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+/* Custom styling for separated English and Chinese names */
+.sidebar .author__name {
+  line-height: 1.2;
+  text-align: center;
+  
+  .author__name-english {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+  }
+  
+  .author__name-chinese {
+    display: block;
+    font-size: 0.9em;
+    opacity: 0.8;
+    font-weight: normal;
+  }
+  
+  /* For smaller screens */
+  @media screen and (max-width: 768px) {
+    .author__name-english {
+      font-size: 0.95em;
+    }
+    
+    .author__name-chinese {
+      font-size: 0.85em;
+    }
+  }
+}

@@ -218,6 +218,9 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
+  about:
+    output: true
+    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
@@ -246,6 +249,13 @@ defaults:
   - scope:
       path: ""
       type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _about
+  - scope:
+      path: ""
+      type: about
     values:
       layout: single
       author_profile: true

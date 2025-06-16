@@ -16,13 +16,12 @@ I am a researcher working on machine learning and artificial intelligence. My re
 
 ## Education
 
-* Ph.D. in Computer Science, [Your University], [Year]
-* M.S. in Computer Science, [Your University], [Year]
-* B.S. in Computer Science, [Your University], [Year]
+* Ph.D. in Computer Science, [National University of Singapore], [2023-Present]
+* B.S. in Computer Science, [National University of Singapore], [2019-2023]
 
 ## Contact
 
-Feel free to reach out to me at [your.email@example.com](mailto:your.email@example.com) or connect with me on [LinkedIn](https://linkedin.com/in/yourprofile).
+Feel free to reach out to me at [zhou_zijian@u.nus.edu](mailto:zhou_zijian@u.nus.edu) or connect with me on [X](https://x.com/BobbyZhouZijian).
 
 ## Research Statement
 

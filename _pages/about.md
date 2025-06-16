@@ -7,7 +7,7 @@ author_profile: true
 
 <div style="text-align: center; margin-bottom: 2em;">
   <h2 style="color: #2c3e50; font-size: 2.5em; margin-bottom: 0.5em;">👋 Nice to meet you!</h2>
-  <p style="font-size: 1.2em; color: #34495e; line-height: 1.6;">
+  <p style="font-size: 1.2em; color: #2c3e50; line-height: 1.6;">
     My name is <strong>Zijian</strong>. I am a second-year PhD candidate advised by <strong>Bryan Kian Hsiang Low</strong> at NUS. 
     I am currently also a research engineer at Singapore-MIT Alliance for Research and Technology Centre (SMART) 
     advised by <strong>Daniela Rus</strong> at MIT.
@@ -21,9 +21,9 @@ author_profile: true
 <table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
   <thead>
     <tr style="border-bottom: 2px solid #ecf0f1;">
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">🎯 Degree</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">🏛️ Institution</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #667eea;">📅 Years</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🎯 Degree</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🏛️ Institution</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">📅 Years</th>
     </tr>
   </thead>
   <tbody>
@@ -47,9 +47,9 @@ author_profile: true
 <table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
   <thead>
     <tr style="border-bottom: 2px solid #ecf0f1;">
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">💡 Position</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">🏢 Institution</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #f093fb;">📅 Years</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">💡 Position</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">🏢 Institution</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #3498db;">📅 Years</th>
     </tr>
   </thead>
   <tbody>
@@ -86,8 +86,8 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 
 <div style="display: flex; flex-direction: column; gap: 1.5em; margin: 2em 0;">
 
-<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #e74c3c;">
-  <h4 style="color: #e74c3c; margin-top: 0;">🚀 Reinforcement Fine-tuning</h4>
+<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #3498db;">
+  <h4 style="color: #3498db; margin-top: 0;">🚀 Reinforcement Fine-tuning</h4>
   <p style="line-height: 1.6; color: #2c3e50;">
     Past research has demonstrated the effectiveness of reinforcement learning in improving LLM performance, including aligning with human preferences and strengthening reasoning capabilities. To achieve effective RL, a critical ingredient is learning the policy on trajectories that meet desired outcomes. An interesting problem is how to generate high-quality trajectories to make learning more efficient or enable agents to learn harder tasks.
   </p>
@@ -100,8 +100,8 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
   </p>
 </div>
 
-<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #2ecc71;">
-  <h4 style="color: #2ecc71; margin-top: 0;">⚡ Speculative Decoding</h4>
+<div style="background: #fff; padding: 1.5em; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid #3498db;">
+  <h4 style="color: #3498db; margin-top: 0;">⚡ Speculative Decoding</h4>
   <p style="line-height: 1.6; color: #2c3e50;">
     Speculative decoding speeds up next token generation by employing a draft model to quickly speculate future tokens, then letting the target model verify them in parallel. We can treat the draft model as a <em>data generator</em> and the target model as a <em>data consumer</em>. Similar to data selection in ML training, we can carefully select draft tokens most likely to be accepted, or have the drafter generate many tokens and select the most probable ones for verification.
   </p>
@@ -110,7 +110,7 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 </div>
 
 <div style="text-align: center; margin-top: 3em;">
-  <h3 style="color: #9b59b6; margin-bottom: 1em;">🌟 Let's Connect!</h3>
+  <h3 style="color: #3498db; margin-bottom: 1em;">🌟 Let's Connect!</h3>
   <p style="color: #2c3e50; font-size: 1.1em; margin: 0;">
     I'm always excited to discuss research ideas, collaborate on projects, or simply chat about the fascinating world of AI and machine learning.
   </p>

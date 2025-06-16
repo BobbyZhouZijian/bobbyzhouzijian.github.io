@@ -1,3 +1,30 @@
 <!-- start custom footer snippets -->
 <!-- <a href="/sitemap/">Sitemap</a> -->
+
+<!-- Google Analytics Visitor Counter -->
+<div class="page__footer-copyright" style="margin-top: 1em;">
+  <span id="visitor-count">
+    <i class="fas fa-eye" aria-hidden="true"></i> 
+    <span id="ga-visitor-count">Loading visitor count...</span>
+  </span>
+</div>
+
+<script>
+// Function to update visitor count
+function updateVisitorCount() {
+  // This will be populated by Google Analytics
+  if (typeof gtag === 'function') {
+    gtag('event', 'page_view', {
+      'event_callback': function() {
+        // The count will be available in Google Analytics dashboard
+        // We can't directly access the count due to GA4's privacy restrictions
+        document.getElementById('ga-visitor-count').textContent = 'View analytics in dashboard';
+      }
+    });
+  }
+}
+
+// Update count when page loads
+document.addEventListener('DOMContentLoaded', updateVisitorCount);
+</script>
 <!-- end custom footer snippets -->

@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "ZHOU Zijian"
+title                    : "Welcome to Zijian's Homepage!"
 title_separator          : "-"
 name                     : &name "ZHOU Zijian"
 description              : &description "personal description"

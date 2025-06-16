@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "ZHOU Zijian",
-    "email": "zhou_zijian@zju.edu.cn",
+    "email": "zhou_zijian@u.nus.edu",
     "phone": "",
     "website": "https://bobbyzhouzijian.github.io",
     "summary": "PhD student at National University of Singapore, advised by Prof. Bryan Kian Hsiang Low.",
@@ -57,14 +57,14 @@
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "TETRIS: Optimal Draft Token Selection for Batch Speculative Decoding",
+      "publisher": "ACL 2025 Main",
+      "releaseDate": "2025-05-22",
+      "website": "https://arxiv.org/pdf/2502.15197",
+      "summary": "We propose a novel token selection method for batch speculative decoding, which is a new decoding strategy for large language models. Our method is based on the idea of TETRIS, which is a game of blocks. We use the game to model the token selection problem and solve it optimally."
     },
     {
-      "name": "Paper Title Number 2",
+      "name": "",
       "publisher": "Journal 1",
       "releaseDate": "2010-10-01",
       "website": "http://academicpages.github.io/files/paper2.pdf",

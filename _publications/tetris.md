@@ -3,7 +3,7 @@ title: "TETRIS: Optimal Draft Token Selection for Batch Speculative Decoding"
 collection: publications
 category: conferences
 permalink: /publication/tetris
-excerpt: '<img src="/images/tetris.pdf" alt="DETAIL Algorithm Demo" style="width: 100%; height: auto; margin: 1px auto; display: block; border-radius: 8px;">'
+excerpt: '<img src="/images/tetris.png" alt="TETRIS Algorithm Demo" style="width: 100%; height: auto; margin: 1px auto; display: block; border-radius: 8px;">'
 date: 2025-02-21
 venue: 'ACL 2025 Main'
 slidesurl: # 'http://academicpages.github.io/files/slides1.pdf'

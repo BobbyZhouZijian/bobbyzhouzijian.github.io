@@ -76,7 +76,7 @@ author_profile: true
   align-items: center;
 }
 
-.publication-item .links a {
+.publication-item .links a, .publication-item .links button {
   background: #3498db;
   color: white;
   padding: 0.5em 1em;
@@ -85,17 +85,19 @@ author_profile: true
   font-size: 0.9em;
   font-weight: bold;
   transition: background 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.publication-item .links a:hover {
+.publication-item .links a:hover, .publication-item .links button:hover {
   background: #2c3e50;
 }
 
-.publication-item .links a.bibtex {
+.publication-item .links a.bibtex, .publication-item .links button.bibtex {
   background: #e74c3c;
 }
 
-.publication-item .links a.bibtex:hover {
+.publication-item .links a.bibtex:hover, .publication-item .links button.bibtex:hover {
   background: #c0392b;
 }
 
@@ -118,7 +120,101 @@ author_profile: true
   font-size: 1.2em;
   font-weight: 600;
 }
+
+.bibtex-dropdown {
+  margin-top: 1em;
+  display: none;
+}
+
+.bibtex-content {
+  width: 100%;
+  min-height: 150px;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f8f9fa;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+
+.bibtex-actions {
+  margin-top: 0.5em;
+  display: flex;
+  gap: 0.5em;
+}
+
+.bibtex-actions button {
+  background: #6c757d;
+  color: white;
+  padding: 0.3em 0.8em;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.bibtex-actions button:hover {
+  background: #5a6268;
+}
 </style>
+
+<script>
+function toggleBibtex(publicationId, bibtexUrl) {
+  const dropdown = document.getElementById('bibtex-dropdown-' + publicationId);
+  const content = document.getElementById('bibtex-content-' + publicationId);
+  
+  if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+    // Show dropdown
+    dropdown.style.display = 'block';
+    
+    // Load BibTeX content if not already loaded
+    if (content.value === '') {
+      content.value = 'Loading...';
+      fetch(bibtexUrl)
+        .then(response => response.text())
+        .then(data => {
+          content.value = data;
+        })
+        .catch(error => {
+          content.value = 'Error loading BibTeX content: ' + error.message;
+        });
+    }
+  } else {
+    // Hide dropdown
+    dropdown.style.display = 'none';
+  }
+}
+
+function copyBibtex(publicationId) {
+  const content = document.getElementById('bibtex-content-' + publicationId);
+  content.select();
+  document.execCommand('copy');
+  
+  // Show feedback
+  const button = event.target;
+  const originalText = button.textContent;
+  button.textContent = 'Copied!';
+  setTimeout(() => {
+    button.textContent = originalText;
+  }, 2000);
+}
+
+function downloadBibtex(publicationId, filename) {
+  const content = document.getElementById('bibtex-content-' + publicationId);
+  const blob = new Blob([content.value], { type: 'text/plain' });
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename || 'citation.bib';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  window.URL.revokeObjectURL(url);
+}
+</script>
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
@@ -148,13 +244,23 @@ author_profile: true
             <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
           {% endif %}
           {% if post.bibtexurl %}
-            <a href="{{ post.bibtexurl }}" class="bibtex" target="_blank">📋 BibTeX</a>
+            {% assign pub_id = post.title | slugify %}
+            <button class="bibtex" onclick="toggleBibtex('{{ pub_id }}', '{{ post.bibtexurl }}')">📋 BibTeX</button>
           {% endif %}
           {% if post.slidesurl %}
             <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
           {% endif %}
           <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
         </div>
+        {% if post.bibtexurl %}
+          <div id="bibtex-dropdown-{{ post.title | slugify }}" class="bibtex-dropdown">
+            <textarea id="bibtex-content-{{ post.title | slugify }}" class="bibtex-content" readonly></textarea>
+            <div class="bibtex-actions">
+              <button onclick="copyBibtex('{{ post.title | slugify }}')">📋 Copy</button>
+              <button onclick="downloadBibtex('{{ post.title | slugify }}', '{{ post.title | slugify }}.bib')">💾 Download</button>
+            </div>
+          </div>
+        {% endif %}
       </div>
     {% endfor %}
   {% endfor %}
@@ -173,13 +279,23 @@ author_profile: true
           <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
         {% endif %}
         {% if post.bibtexurl %}
-          <a href="{{ post.bibtexurl }}" class="bibtex" target="_blank">📋 BibTeX</a>
+          {% assign pub_id = post.title | slugify %}
+          <button class="bibtex" onclick="toggleBibtex('{{ pub_id }}', '{{ post.bibtexurl }}')">📋 BibTeX</button>
         {% endif %}
         {% if post.slidesurl %}
           <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
         {% endif %}
         <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
       </div>
+      {% if post.bibtexurl %}
+        <div id="bibtex-dropdown-{{ post.title | slugify }}" class="bibtex-dropdown">
+          <textarea id="bibtex-content-{{ post.title | slugify }}" class="bibtex-content" readonly></textarea>
+          <div class="bibtex-actions">
+            <button onclick="copyBibtex('{{ post.title | slugify }}')">📋 Copy</button>
+            <button onclick="downloadBibtex('{{ post.title | slugify }}', '{{ post.title | slugify }}.bib')">💾 Download</button>
+          </div>
+        </div>
+      {% endif %}
     </div>
   {% endfor %}
 {% endif %}

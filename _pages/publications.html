@@ -55,6 +55,20 @@ author_profile: true
   text-align: justify;
 }
 
+.publication-item .excerpt img {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.publication-item .excerpt img:hover {
+  transform: scale(1.02);
+}
+
 .publication-item .links {
   display: flex;
   gap: 1em;
@@ -127,7 +141,7 @@ author_profile: true
           <div class="venue">{{ post.venue }}</div>
         {% endif %}
         {% if post.excerpt %}
-          <div class="excerpt">{{ post.excerpt }}</div>
+          <div class="excerpt">{{ post.excerpt | markdownify }}</div>
         {% endif %}
         <div class="links">
           {% if post.paperurl %}
@@ -152,7 +166,7 @@ author_profile: true
         <div class="venue">{{ post.venue }}</div>
       {% endif %}
       {% if post.excerpt %}
-        <div class="excerpt">{{ post.excerpt }}</div>
+        <div class="excerpt">{{ post.excerpt | markdownify }}</div>
       {% endif %}
       <div class="links">
         {% if post.paperurl %}

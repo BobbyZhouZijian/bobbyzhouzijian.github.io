@@ -12,6 +12,153 @@
   {% assign title = post.title %}
 {% endif %}
 
+<!-- Special styling for publications -->
+{% if post.collection == 'publications' %}
+<style>
+.publication-card {
+  background: #fff;
+  padding: 2em;
+  margin: 1.5em 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
+  border: 2px solid #3498db;
+}
+
+.publication-card .archive__item-title {
+  color: #3498db;
+  margin: 0 0 0.5em 0;
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: none;
+  line-height: 1.4;
+}
+
+.publication-card .publication-venue {
+  color: #3498db;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.publication-card .archive__item-excerpt {
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 1em;
+  text-align: justify;
+  font-size: 1.05em;
+  font-weight: 400;
+}
+
+.publication-card .archive__item-excerpt img {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.publication-card .archive__item-excerpt img:hover {
+  transform: scale(1.02);
+}
+
+.publication-links {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.publication-links a {
+  background: #3498db;
+  color: white;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+
+.publication-links a:hover {
+  background: #2980b9;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+  transform: translateY(-1px);
+}
+
+.publication-links a:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+}
+
+.publication-links a.bibtex {
+  background: #e74c3c;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+.publication-links a.bibtex:hover {
+  background: #c0392b;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+  transform: translateY(-1px);
+}
+
+.publication-links a.slides {
+  background: #9b59b6;
+  box-shadow: 0 2px 8px rgba(155, 89, 182, 0.3);
+}
+
+.publication-links a.slides:hover {
+  background: #8e44ad;
+  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.4);
+  transform: translateY(-1px);
+}
+</style>
+
+<div class="publication-card">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h2>
+    
+    {% if post.venue %}
+      <div class="publication-venue">{{ post.venue }}</div>
+    {% endif %}
+
+    {% if post.excerpt %}
+      <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</div>
+    {% endif %}
+    
+    <div class="publication-links">
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" target="_blank">📄 Paper</a>
+      {% endif %}
+      {% if post.bibtexurl %}
+        <a href="{{ post.bibtexurl }}" class="bibtex" target="_blank">📋 BibTeX</a>
+      {% endif %}
+      {% if post.slidesurl %}
+        <a href="{{ post.slidesurl }}" class="slides" target="_blank">🎯 Slides</a>
+      {% endif %}
+      <a href="{{ base_path }}{{ post.url }}">🔗 Details</a>
+    </div>
+  </article>
+</div>
+
+{% else %}
+<!-- Default styling for other collections -->
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -86,3 +233,4 @@
 
   </article>
 </div>
+{% endif %}

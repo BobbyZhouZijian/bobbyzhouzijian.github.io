@@ -2,7 +2,7 @@
 title: "Data Value Estimation on Private Gradients"
 collection: publications
 category: manuscripts
-permalink: /publication/2015-10-01-paper-title-number-3
+permalink: /publication/dvdp
 excerpt: # ''
 date: 2024-12-22
 venue: 'arXiv'

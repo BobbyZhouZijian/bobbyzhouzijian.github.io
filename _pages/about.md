@@ -30,7 +30,7 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 
 ### 🎯 Current Research Focus Areas
 
-<div style="display: flex; flex-direction: column; gap: 2em; margin: 2.5em 0;">
+<div style="display: block; margin: 2.5em 0;">
 
 <div style="
   background: #fff;
@@ -38,7 +38,8 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
   border: 2px solid #3498db;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 2em;
+  box-sizing: border-box;
 ">
   <h4 style="
     color: #3498db;
@@ -64,7 +65,8 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
   border: 2px solid #3498db;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 2em;
+  box-sizing: border-box;
 ">
   <h4 style="
     color: #3498db;
@@ -90,7 +92,8 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
   border: 2px solid #3498db;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 2em;
+  box-sizing: border-box;
 ">
   <h4 style="
     color: #3498db;

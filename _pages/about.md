@@ -83,6 +83,6 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 
 <div style="text-align: left; margin-top: 3em;">
   <p style="color: #2c3e50; font-size: 1em; margin: 0;">
-    I'm always excited to discuss research ideas, collaborate on projects, or simply chat about the fascinating world of AI and machine learning. Welcome to connect me on email, linkedin, or X (twitter) and let's chat!
+    I'm always excited to discuss research ideas, collaborate on projects, or simply chat about the fascinating world of AI and machine learning. Feel free to connect with me on email, LinkedIn, or X (Twitter) and let's chat!
   </p>
 </div>

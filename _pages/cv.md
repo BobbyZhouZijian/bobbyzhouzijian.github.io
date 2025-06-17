@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
+
 <div style="text-align: center; margin: 2em 0; padding: 1em;">
   <h2 style="margin-bottom: 1em; font-size: 1.8em; color: #2c3e50;">📄 Curriculum Vitae</h2>
   <div style="display: flex; justify-content: center; gap: 0.5em; flex-wrap: wrap; margin-bottom: 1em;">

@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 <div style="text-align: left; margin-bottom: 2em;">
-  <h2 style="color: #2c3e50; font-size: 2.2em; margin-bottom: 0.5em;">👋 Nice to meet you!</h2>
+  <h2 style="color: #2c3e50; font-size: 1.8em; margin-bottom: 0.5em;">👋 Nice to meet you!</h2>
   <p style="font-size: 1em; color: #2c3e50; line-height: 1.8;">
     My name is <strong>Zijian</strong>. I am a second-year PhD candidate advised by <strong>Bryan Kian Hsiang Low</strong> at NUS. 
     I am currently also a research engineer at Singapore-MIT Alliance for Research and Technology Centre (SMART), 
@@ -16,7 +16,7 @@ author_profile: true
 
 ## 🔬 Research Interests
 
-<div style="color: #2c3e50; line-height: 1.8; margin: 1em 0;">
+<div style="color: #2c3e50; line-height: 1.8; margin: 1em 0; font-size: 1em;">
 
 My research journey began with a <strong>game-theoretic perspective</strong> of machine learning. As data increasingly becomes the fuel that powers large-scale ML models, it is imperative to effectively <strong>value, curate, and attribute data</strong> to make modern ML systems more reliable, fair, and efficient.
 
@@ -43,7 +43,7 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 .research-item h4 {
   color: #3498db;
   margin: 0 0 1em 0;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 600;
   letter-spacing: -0.02em;
   background: none;
@@ -53,7 +53,7 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
   line-height: 1.7;
   color: #4a5568;
   margin: 0;
-  font-size: 1.05em;
+  font-size: 1em;
   font-weight: 400;
 }
 </style>
@@ -82,7 +82,7 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 ## 🌟 Let's Connect!
 
 <div style="text-align: left; margin-top: 3em;">
-  <p style="color: #2c3e50; font-size: 1.1em; margin: 0;">
+  <p style="color: #2c3e50; font-size: 1em; margin: 0;">
     I'm always excited to discuss research ideas, collaborate on projects, or simply chat about the fascinating world of AI and machine learning. Welcome to connect me on email, linkedin, or X (twitter) and let's chat!
   </p>
 </div>

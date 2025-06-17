@@ -10,16 +10,16 @@ redirect_from:
 {% include base_path %}
 
 <div style="text-align: center; margin: 2em 0; padding: 1em;">
-  <h2 style="margin-bottom: 1em; font-size: 1.3em; color: #2c3e50;">📄 Curriculum Vitae</h2>
+  <h2 style="margin-bottom: 1em; font-size: 2.2em; color: #2c3e50;">📄 Curriculum Vitae</h2>
   <div style="display: flex; justify-content: center; gap: 0.5em; flex-wrap: wrap; margin-bottom: 1em;">
     <a href="{{ base_path }}/files/cv.pdf" 
-       style="display: inline-block; padding: 6px 12px; background: #f8f9fa; color: #495057; text-decoration: none; border-radius: 4px; border: 1px solid #dee2e6; transition: all 0.2s ease; font-size: 0.9em;"
+       style="display: inline-block; padding: 6px 12px; background: #f8f9fa; color: #495057; text-decoration: none; border-radius: 4px; border: 1px solid #dee2e6; transition: all 0.2s ease; font-size: 1.1em;"
        onmouseover="this.style.background='#e9ecef'; this.style.borderColor='#adb5bd'"
        onmouseout="this.style.background='#f8f9fa'; this.style.borderColor='#dee2e6'">
       <i class="fas fa-download"></i> Download PDF
     </a>
     <a href="#" onclick="togglePreview(); return false;"
-       style="display: inline-block; padding: 6px 12px; background: #f8f9fa; color: #495057; text-decoration: none; border-radius: 4px; border: 1px solid #dee2e6; transition: all 0.2s ease; font-size: 0.9em;"
+       style="display: inline-block; padding: 6px 12px; background: #f8f9fa; color: #495057; text-decoration: none; border-radius: 4px; border: 1px solid #dee2e6; transition: all 0.2s ease; font-size: 1.1em;"
        onmouseover="this.style.background='#e9ecef'; this.style.borderColor='#adb5bd'"
        onmouseout="this.style.background='#f8f9fa'; this.style.borderColor='#dee2e6'">
       <i class="fas fa-eye"></i> Show Preview
@@ -55,21 +55,21 @@ function togglePreview() {
 <table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
   <thead>
     <tr style="border-bottom: 2px solid #ecf0f1;">
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Degree</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Institution</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Years</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.4em; color: #2c3e50;">Degree</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.4em; color: #2c3e50;">Institution</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.4em; color: #2c3e50;">Years</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 0.8em;"><strong>Ph.D. in Computer Science</strong></td>
-      <td style="padding: 0.8em;">National University of Singapore</td>
-      <td style="padding: 0.8em;">2023 – present</td>
+      <td style="padding: 0.8em; font-size: 1.1em;"><strong>Ph.D. in Computer Science</strong></td>
+      <td style="padding: 0.8em; font-size: 1.1em;">National University of Singapore</td>
+      <td style="padding: 0.8em; font-size: 1.1em;">2023 – present</td>
     </tr>
     <tr>
-      <td style="padding: 0.8em;"><strong>B.Comp. (1st Class Hons) in Computer Science</strong></td>
-      <td style="padding: 0.8em;">National University of Singapore</td>
-      <td style="padding: 0.8em;">2019 – 2023</td>
+      <td style="padding: 0.8em; font-size: 1.1em;"><strong>B.Comp. (1st Class Hons) in Computer Science</strong></td>
+      <td style="padding: 0.8em; font-size: 1.1em;">National University of Singapore</td>
+      <td style="padding: 0.8em; font-size: 1.1em;">2019 – 2023</td>
     </tr>
   </tbody>
 </table>
@@ -81,21 +81,21 @@ function togglePreview() {
 <table style="width: 100%; color: #2c3e50; border-collapse: collapse; margin: 1em 0;">
   <thead>
     <tr style="border-bottom: 2px solid #ecf0f1;">
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Position</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Institution</th>
-      <th style="padding: 0.8em; text-align: left; font-size: 1.1em; color: #2c3e50;">Years</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.4em; color: #2c3e50;">Position</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.4em; color: #2c3e50;">Institution</th>
+      <th style="padding: 0.8em; text-align: left; font-size: 1.4em; color: #2c3e50;">Years</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 0.8em;"><strong>Research Engineer</strong></td>
-      <td style="padding: 0.8em;">Singapore-MIT Alliance for Research and Technology Centre (SMART)</td>
-      <td style="padding: 0.8em;">Aug 2023 – present</td>
+      <td style="padding: 0.8em; font-size: 1.1em;"><strong>Research Engineer</strong></td>
+      <td style="padding: 0.8em; font-size: 1.1em;">Singapore-MIT Alliance for Research and Technology Centre (SMART)</td>
+      <td style="padding: 0.8em; font-size: 1.1em;">Aug 2023 – present</td>
     </tr>
     <tr>
-      <td style="padding: 0.8em;"><strong>ML Engineer Intern</strong></td>
-      <td style="padding: 0.8em;">TikTok</td>
-      <td style="padding: 0.8em;">Mar 2021 – Mar 2022</td>
+      <td style="padding: 0.8em; font-size: 1.1em;"><strong>ML Engineer Intern</strong></td>
+      <td style="padding: 0.8em; font-size: 1.1em;">TikTok</td>
+      <td style="padding: 0.8em; font-size: 1.1em;">Mar 2021 – Mar 2022</td>
     </tr>
   </tbody>
 </table>

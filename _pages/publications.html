@@ -19,26 +19,21 @@ author_profile: true
 <style>
 .publication-item {
   background: #fff;
-  padding: 1.5em;
+  padding: 2em;
   margin: 1.5em 0;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border-left: 5px solid #3498db;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.publication-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
+  border: 2px solid #3498db;
 }
 
 .publication-item h3 {
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  font-size: 1.3em;
-  line-height: 1.4;
+  color: #3498db;
+  margin: 0 0 0.5em 0;
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   background: none;
+  line-height: 1.4;
 }
 
 .publication-item .venue {
@@ -49,10 +44,12 @@ author_profile: true
 }
 
 .publication-item .excerpt {
-  color: #2c3e50;
-  line-height: 1.6;
+  color: #4a5568;
+  line-height: 1.7;
   margin-bottom: 1em;
   text-align: justify;
+  font-size: 1.05em;
+  font-weight: 400;
 }
 
 .publication-item .excerpt img {
@@ -79,32 +76,52 @@ author_profile: true
 .publication-item .links a {
   background: #3498db;
   color: white;
-  padding: 0.5em 1em;
-  border-radius: 5px;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
   text-decoration: none;
   font-size: 0.9em;
-  font-weight: bold;
-  transition: background 0.2s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
 }
 
 .publication-item .links a:hover {
-  background: #2c3e50;
+  background: #2980b9;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+  transform: translateY(-1px);
+}
+
+.publication-item .links a:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
 }
 
 .publication-item .links a.bibtex {
   background: #e74c3c;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
 }
 
 .publication-item .links a.bibtex:hover {
   background: #c0392b;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+  transform: translateY(-1px);
 }
 
 .publication-item .links a.slides {
-  background: #3498db;
+  background: #9b59b6;
+  box-shadow: 0 2px 8px rgba(155, 89, 182, 0.3);
 }
 
 .publication-item .links a.slides:hover {
-  background: #2c3e50;
+  background: #8e44ad;
+  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.4);
+  transform: translateY(-1px);
 }
 
 .category-header {

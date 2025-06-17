@@ -7,7 +7,7 @@ author_profile: true
 
 <div style="text-align: left; margin-bottom: 2em;">
   <h2 style="color: #2c3e50; font-size: 2.2em; margin-bottom: 0.5em;">👋 Nice to meet you!</h2>
-  <p style="font-size: 1.1em; color: #2c3e50; line-height: 1.6;">
+  <p style="font-size: 1em; color: #2c3e50; line-height: 1.8;">
     My name is <strong>Zijian</strong>. I am a second-year PhD candidate advised by <strong>Bryan Kian Hsiang Low</strong> at NUS. 
     I am currently also a research engineer at Singapore-MIT Alliance for Research and Technology Centre (SMART), 
     advised by <strong>Daniela Rus</strong> at MIT. Prior to that, I completed my undergraduate studies at NUS, majoring in Computer Science and Mathematics. I also interned at TikTok (Singapore) as an ML engineer for a year on the advertisement moderation team.

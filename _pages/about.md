@@ -30,89 +30,53 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 
 ### 🎯 Current Research Focus Areas
 
-<div style="display: block; margin: 2.5em 0;">
-
-<div style="
+<style>
+.research-item {
   background: #fff;
   padding: 2em;
+  margin: 1.5em 0;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
   border: 2px solid #3498db;
-  margin-bottom: 2em;
-  box-sizing: border-box;
-">
-  <h4 style="
-    color: #3498db;
-    margin: 0 0 1em 0;
-    font-size: 1.4em;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  ">Reinforcement Fine-tuning</h4>
-  <p style="
-    line-height: 1.7;
-    color: #4a5568;
-    margin: 0;
-    font-size: 1.05em;
-    font-weight: 400;
-  ">
+}
+
+.research-item h4 {
+  color: #3498db;
+  margin: 0 0 1em 0;
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: none;
+}
+
+.research-item p {
+  line-height: 1.7;
+  color: #4a5568;
+  margin: 0;
+  font-size: 1.05em;
+  font-weight: 400;
+}
+</style>
+
+<div class="research-item">
+  <h4>Reinforcement Fine-tuning</h4>
+  <p>
     Past research has demonstrated the effectiveness of reinforcement learning in improving LLM performance, including aligning with human preferences and strengthening reasoning capabilities. To achieve effective RL, a critical ingredient is learning the policy on trajectories that meet desired outcomes. An interesting problem is how to generate high-quality trajectories to make learning more efficient or enable agents to learn harder tasks.
   </p>
 </div>
 
-<div style="
-  background: #fff;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
-  border: 2px solid #3498db;
-  margin-bottom: 2em;
-  box-sizing: border-box;
-">
-  <h4 style="
-    color: #3498db;
-    margin: 0 0 1em 0;
-    font-size: 1.4em;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  ">Prompt Optimization</h4>
-  <p style="
-    line-height: 1.7;
-    color: #4a5568;
-    margin: 0;
-    font-size: 1.05em;
-    font-weight: 400;
-  ">
+<div class="research-item">
+  <h4>Prompt Optimization</h4>
+  <p>
     A newly emerged paradigm in LLMs is using prompts to alter model behavior or inject new knowledge through in-context learning (ICL). In ICL, task demonstrations are supplied in prompts so LLMs can learn during inference. This paradigm is analogous to classic ML training, where task demonstrations are like training samples. A natural research question is how to evaluate and interpret these demonstrations in the inference-time context.
   </p>
 </div>
 
-<div style="
-  background: #fff;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
-  border: 2px solid #3498db;
-  margin-bottom: 2em;
-  box-sizing: border-box;
-">
-  <h4 style="
-    color: #3498db;
-    margin: 0 0 1em 0;
-    font-size: 1.4em;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  ">Speculative Decoding</h4>
-  <p style="
-    line-height: 1.7;
-    color: #4a5568;
-    margin: 0;
-    font-size: 1.05em;
-    font-weight: 400;
-  ">
+<div class="research-item">
+  <h4>Speculative Decoding</h4>
+  <p>
     Speculative decoding speeds up next token generation by employing a draft model to quickly speculate future tokens, then letting the target model verify them in parallel. We can treat the draft model as a <em>data generator</em> and the target model as a <em>data consumer</em>. Similar to data selection in ML training, we can carefully select draft tokens most likely to be accepted, or have the drafter generate many tokens and select the most probable ones for verification.
   </p>
-</div>
-
 </div>
 
 ## 🌟 Let's Connect!

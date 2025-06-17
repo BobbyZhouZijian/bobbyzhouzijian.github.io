@@ -39,8 +39,6 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
   box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
   border: 2px solid #3498db;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  max-width: none;
 ">
   <h4 style="
     color: #3498db;
@@ -67,8 +65,6 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
   box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
   border: 2px solid #3498db;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  max-width: none;
 ">
   <h4 style="
     color: #3498db;
@@ -95,8 +91,6 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
   box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
   border: 2px solid #3498db;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  max-width: none;
 ">
   <h4 style="
     color: #3498db;

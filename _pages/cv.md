@@ -26,28 +26,36 @@ redirect_from:
 
 html[data-theme="dark"] {
   /* Dark mode colors */
-  --text-primary: #e2e8f0;
+  --text-primary: #f1f5f9;
   --text-secondary: #cbd5e0;
-  --bg-primary: #1a202c;
-  --bg-secondary: #2d3748;
-  --bg-tertiary: #2d3748;
-  --border-color: #4a5568;
-  --border-hover-color: #718096;
-  --button-bg: #2d3748;
-  --button-text: #e2e8f0;
-  --table-border: #4a5568;
+  --bg-primary: #1e293b;
+  --bg-secondary: #334155;
+  --bg-tertiary: #334155;
+  --border-color: #64748b;
+  --border-hover-color: #94a3b8;
+  --button-bg: #334155;
+  --button-text: #f1f5f9;
+  --table-border: #475569;
+  --table-header-bg: #2d3748;
+  --table-row-hover: #374151;
 }
 
 .cv-button {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 8px 16px;
   background: var(--button-bg);
   color: var(--button-text);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 1px solid var(--border-color);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   font-size: 0.9em;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .cv-button {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cv-button:hover {
@@ -55,6 +63,12 @@ html[data-theme="dark"] {
   border-color: var(--border-hover-color);
   color: var(--button-text);
   text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="dark"] .cv-button:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .cv-preview-container {
@@ -74,23 +88,42 @@ html[data-theme="dark"] {
   margin: 1em 0;
   background: var(--bg-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .cv-table {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cv-table thead tr {
   border-bottom: 2px solid var(--table-border);
+  background: var(--table-header-bg, var(--bg-secondary));
 }
 
 .cv-table th {
-  padding: 0.8em;
+  padding: 1em 0.8em;
   text-align: left;
   font-size: 1.2em;
   color: var(--text-primary);
+  font-weight: 600;
+  background: var(--table-header-bg, var(--bg-secondary));
 }
 
 .cv-table td {
-  padding: 0.8em;
+  padding: 0.9em 0.8em;
   font-size: 1em;
   border-bottom: 1px solid var(--table-border);
+  transition: background-color 0.2s ease;
+}
+
+.cv-table tbody tr:hover {
+  background: var(--table-row-hover, var(--bg-secondary));
+}
+
+.cv-table tbody tr:last-child td {
+  border-bottom: none;
 }
 </style>
 
@@ -136,6 +169,7 @@ function togglePreview() {
     <tr>
       <th>Degree</th>
       <th>Institution</th>
+      <th>GPA</th>
       <th>Years</th>
     </tr>
   </thead>
@@ -143,6 +177,7 @@ function togglePreview() {
     <tr>
       <td><strong>Ph.D. in Computer Science</strong></td>
       <td>National University of Singapore</td>
+      <td>-</td>
       <td>2023 – present</td>
     </tr>
     <tr>

@@ -139,7 +139,7 @@ html[data-theme="dark"] .cv-table {
   </div>
 </div>
 
-<div id="cv-preview" class="cv-preview-container" style="display: none;">
+<div id="cv-preview" class="cv-preview-container">
   <iframe src="{{ base_path }}/files/cv.pdf" 
           style="width: 100%; height: 800px; border: 1px solid var(--border-color); border-radius: 3px;"
           title="CV Preview">

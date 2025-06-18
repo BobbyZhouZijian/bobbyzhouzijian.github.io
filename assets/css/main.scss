@@ -49,13 +49,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  white-space: nowrap;
   
   .author__name-english {
     display: inline-block;
     font-weight: bold;
     margin-bottom: 0.2em;
-    white-space: nowrap;
+    /* Allow wrapping on smaller screens */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   
   .author__name-chinese {
@@ -63,7 +65,18 @@
     font-size: 0.9em;
     opacity: 0.8;
     font-weight: normal;
-    white-space: nowrap;
+    /* Allow wrapping on smaller screens */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* For larger screens, prevent wrapping */
+  @media screen and (min-width: 1024px) {
+    .author__name-english,
+    .author__name-chinese {
+      white-space: nowrap;
+    }
   }
   
   /* For smaller screens */

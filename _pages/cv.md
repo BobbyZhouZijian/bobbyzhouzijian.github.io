@@ -148,6 +148,7 @@ function togglePreview() {
     <tr>
       <td><strong>B.Comp. (1st Class Hons) in Computer Science</strong></td>
       <td>National University of Singapore</td>
+      <td>GPA: 4.92 / 5.00</td>
       <td>2019 – 2023</td>
     </tr>
   </tbody>
@@ -191,11 +192,12 @@ function togglePreview() {
 
 ## Honors and Awards
 
-- **Research Achievement Award**, National University of Singapore, 2024
-- **Google Travel Grant**, AAAI 2023 (for "Probably Approximate Shapley Fairness")
-- **Dean's List**, National University of Singapore, 2019-2022
-- **Outstanding Computing Project Prize**, NUS, 2022
-- **NUS Science and Technology Scholarship**, NUS, 2019-2023
+- **Research Achievement Award**, National University of Singapore, 2024 (awarded to ~30 out of all PhD students in School of Computing)
+- **Google Travel Grant**, AAAI 2023 (for "Probably Approximate Shapley Fairness" paper)
+- **Dean's List**, National University of Singapore, 2020-2022 (top 5% of the cohort for each semester (except for the first two semesters), for 4 consecutive semesters)
+- **Outstanding Computing Project Prize**, NUS, 2022 (awarded to ~5 out of all undergraduate research programs and final-year projects in school of computing)
+- **NUS Top 1% Performing Student**, for (Programming Methodology I (cohort size: 529); Machine Learning (cohort size: 264); Algorithmic Mechanism Design (cohort size: 73))
+- **NUS Science and Technology Scholarship**, NUS, 2019-2023 (full scholarship for undergraduate studies)
 
 ---
 

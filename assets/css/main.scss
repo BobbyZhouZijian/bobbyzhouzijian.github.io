@@ -45,10 +45,10 @@
 /* Custom styling for separated English and Chinese names */
 .sidebar .author__name {
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
   
   .author__name-english {
     display: inline-block;

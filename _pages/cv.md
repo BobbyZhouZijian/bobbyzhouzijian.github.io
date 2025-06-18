@@ -24,20 +24,18 @@ redirect_from:
   --table-border: #ecf0f1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode colors */
-    --text-primary: #e2e8f0;
-    --text-secondary: #cbd5e0;
-    --bg-primary: #1a202c;
-    --bg-secondary: #2d3748;
-    --bg-tertiary: #2d3748;
-    --border-color: #4a5568;
-    --border-hover-color: #718096;
-    --button-bg: #2d3748;
-    --button-text: #e2e8f0;
-    --table-border: #4a5568;
-  }
+html[data-theme="dark"] {
+  /* Dark mode colors */
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e0;
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --bg-tertiary: #2d3748;
+  --border-color: #4a5568;
+  --border-hover-color: #718096;
+  --button-bg: #2d3748;
+  --button-text: #e2e8f0;
+  --table-border: #4a5568;
 }
 
 .cv-button {

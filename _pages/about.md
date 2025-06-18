@@ -17,17 +17,15 @@ author_profile: true
   --shadow-color: rgba(52, 152, 219, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode colors */
-    --text-primary: #e2e8f0;
-    --text-secondary: #cbd5e0;
-    --bg-primary: #1a202c;
-    --bg-secondary: #2d3748;
-    --border-color: #4299e1;
-    --link-color: #63b3ed;
-    --shadow-color: rgba(66, 153, 225, 0.25);
-  }
+html[data-theme="dark"] {
+  /* Dark mode colors */
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e0;
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --border-color: #4299e1;
+  --link-color: #63b3ed;
+  --shadow-color: rgba(66, 153, 225, 0.25);
 }
 
 .research-item {

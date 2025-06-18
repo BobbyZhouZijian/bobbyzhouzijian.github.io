@@ -38,27 +38,25 @@ author_profile: true
   --shadow-slides-hover: rgba(155, 89, 182, 0.4);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode colors */
-    --text-primary: #e2e8f0;
-    --text-secondary: #cbd5e0;
-    --bg-primary: #1a202c;
-    --bg-secondary: #2d3748;
-    --border-color: #4299e1;
-    --link-color: #63b3ed;
-    --link-hover-color: #90cdf4;
-    --shadow-color: rgba(66, 153, 225, 0.25);
-    --shadow-hover-color: rgba(66, 153, 225, 0.5);
-    --button-bibtex: #f56565;
-    --button-bibtex-hover: #fc8181;
-    --button-slides: #b794f6;
-    --button-slides-hover: #d6bcfa;
-    --shadow-bibtex: rgba(245, 101, 101, 0.3);
-    --shadow-bibtex-hover: rgba(245, 101, 101, 0.4);
-    --shadow-slides: rgba(183, 148, 246, 0.3);
-    --shadow-slides-hover: rgba(183, 148, 246, 0.4);
-  }
+html[data-theme="dark"] {
+  /* Dark mode colors */
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e0;
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --border-color: #4299e1;
+  --link-color: #63b3ed;
+  --link-hover-color: #90cdf4;
+  --shadow-color: rgba(66, 153, 225, 0.25);
+  --shadow-hover-color: rgba(66, 153, 225, 0.5);
+  --button-bibtex: #f56565;
+  --button-bibtex-hover: #fc8181;
+  --button-slides: #b794f6;
+  --button-slides-hover: #d6bcfa;
+  --shadow-bibtex: rgba(245, 101, 101, 0.3);
+  --shadow-bibtex-hover: rgba(245, 101, 101, 0.4);
+  --shadow-slides: rgba(183, 148, 246, 0.3);
+  --shadow-slides-hover: rgba(183, 148, 246, 0.4);
 }
 
 .publication-item {
@@ -107,10 +105,8 @@ author_profile: true
   transition: transform 0.2s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  .publication-item .excerpt img {
-    box-shadow: 0 2px 8px rgba(255,255,255,0.1);
-  }
+html[data-theme="dark"] .publication-item .excerpt img {
+  box-shadow: 0 2px 8px rgba(255,255,255,0.1);
 }
 
 .publication-item .excerpt img:hover {

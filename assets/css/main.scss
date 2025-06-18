@@ -49,6 +49,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Add some padding to prevent text cutoff */
+  padding: 0 5px;
   
   .author__name-english {
     display: inline-block;
@@ -71,16 +73,23 @@
     hyphens: auto;
   }
   
-  /* For larger screens, prevent wrapping */
-  @media screen and (min-width: 1024px) {
-    .author__name-english,
+  /* For very small screens */
+  @media screen and (max-width: 480px) {
+    padding: 0 3px;
+    
+    .author__name-english {
+      font-size: 0.9em;
+    }
+    
     .author__name-chinese {
-      white-space: nowrap;
+      font-size: 0.8em;
     }
   }
   
-  /* For smaller screens */
-  @media screen and (max-width: 768px) {
+  /* For small to medium screens */
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    padding: 0 8px;
+    
     .author__name-english {
       font-size: 0.95em;
     }
@@ -88,5 +97,81 @@
     .author__name-chinese {
       font-size: 0.85em;
     }
+  }
+  
+  /* For medium screens (tablet range) */
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
+    padding: 0 10px;
+    
+    .author__name-english,
+    .author__name-chinese {
+      /* Allow controlled wrapping in this range */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+  
+  /* For larger screens, prevent wrapping */
+  @media screen and (min-width: 1024px) {
+    padding: 0;
+    
+    .author__name-english,
+    .author__name-chinese {
+      white-space: nowrap;
+    }
+  }
+}
+
+/* Additional fix for author content padding on smaller screens */
+@media screen and (max-width: 768px) {
+  .author__content {
+    padding-right: 15px !important;
+    padding-left: 10px !important;
+  }
+}
+
+/* Ensure proper spacing for author bio and other content */
+@media screen and (max-width: 480px) {
+  .sidebar .author__bio {
+    padding: 0 3px;
+    font-size: 0.9em;
+  }
+}
+
+/* Responsive styling for author profile social links */
+@media screen and (max-width: 768px) {
+  .author__urls {
+    /* Ensure social links don't get cut off */
+    padding: 8px 5px;
+    
+    li {
+      /* Allow text wrapping for long social links */
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    a {
+      padding-right: 3px;
+      font-size: 0.9em;
+    }
+  }
+}
+
+/* Very small screens - make social links more compact */
+@media screen and (max-width: 480px) {
+  .author__urls {
+    padding: 5px 3px;
+    
+    a {
+      padding-right: 2px;
+      font-size: 0.85em;
+    }
+  }
+  
+  /* Make icons slightly smaller on very small screens */
+  .author__urls .icon-pad-right {
+    padding-right: 0.3em;
+    margin-right: 0.3em;
   }
 }

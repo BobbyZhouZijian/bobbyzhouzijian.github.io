@@ -5,9 +5,62 @@ permalink: /about/
 author_profile: true
 ---
 
+<style>
+:root {
+  /* Light mode colors */
+  --text-primary: #2c3e50;
+  --text-secondary: #4a5568;
+  --bg-primary: #fff;
+  --bg-secondary: #f8f9fa;
+  --border-color: #3498db;
+  --link-color: #3498db;
+  --shadow-color: rgba(52, 152, 219, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode colors */
+    --text-primary: #e2e8f0;
+    --text-secondary: #cbd5e0;
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --border-color: #4299e1;
+    --link-color: #63b3ed;
+    --shadow-color: rgba(66, 153, 225, 0.25);
+  }
+}
+
+.research-item {
+  background: var(--bg-primary);
+  padding: 2em;
+  margin: 1.5em 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 2px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-item h4 {
+  color: var(--border-color);
+  margin: 0 0 1em 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: none;
+}
+
+.research-item p {
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 1em;
+  font-weight: 400;
+}
+</style>
+
 <div style="text-align: left; margin-bottom: 2em;">
-  <h2 style="color: #2c3e50; font-size: 1.8em; margin-bottom: 0.5em;">👋 Nice to meet you!</h2>
-  <p style="font-size: 1em; color: #2c3e50; line-height: 1.8;">
+  <h2 style="color: var(--text-primary); font-size: 1.8em; margin-bottom: 0.5em;">👋 Nice to meet you!</h2>
+  <p style="font-size: 1em; color: var(--text-primary); line-height: 1.8;">
     My name is <strong>Zijian</strong>. I am a second-year PhD candidate advised by <strong>Bryan Kian Hsiang Low</strong> at NUS. 
     I am currently also a research engineer at Singapore-MIT Alliance for Research and Technology Centre (SMART), 
     advised by <strong>Daniela Rus</strong> at MIT. Prior to that, I completed my undergraduate studies at NUS, majoring in Computer Science and Mathematics. I also interned at TikTok (Singapore) as an ML engineer for a year on the advertisement moderation team.
@@ -16,7 +69,7 @@ author_profile: true
 
 ## 🔬 Research Interests
 
-<div style="color: #2c3e50; line-height: 1.8; margin: 1em 0; font-size: 1em;">
+<div style="color: var(--text-primary); line-height: 1.8; margin: 1em 0; font-size: 1em;">
 
 My research journey began with a <strong>game-theoretic perspective</strong> of machine learning. As data increasingly becomes the fuel that powers large-scale ML models, it is imperative to effectively <strong>value, curate, and attribute data</strong> to make modern ML systems more reliable, fair, and efficient.
 
@@ -29,34 +82,6 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 </div>
 
 ### 🎯 Current Research Focus Areas
-
-<style>
-.research-item {
-  background: #fff;
-  padding: 2em;
-  margin: 1.5em 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(52, 152, 219, 0.15);
-  border: 2px solid #3498db;
-}
-
-.research-item h4 {
-  color: #3498db;
-  margin: 0 0 1em 0;
-  font-size: 1.2em;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  background: none;
-}
-
-.research-item p {
-  line-height: 1.7;
-  color: #4a5568;
-  margin: 0;
-  font-size: 1em;
-  font-weight: 400;
-}
-</style>
 
 <div class="research-item">
   <h4>Reinforcement Fine-tuning</h4>
@@ -82,7 +107,7 @@ With the advent of <strong>Large Language Models (LLMs)</strong>, my research in
 ## 🌟 Let's Connect!
 
 <div style="text-align: left; margin-top: 3em;">
-  <p style="color: #2c3e50; font-size: 1em; margin: 0;">
+  <p style="color: var(--text-primary); font-size: 1em; margin: 0;">
     I'm always excited to discuss research ideas, collaborate on projects, or simply chat about the fascinating world of AI and machine learning. Feel free to connect with me on email, LinkedIn, or X (Twitter) and let's chat!
   </p>
 </div>

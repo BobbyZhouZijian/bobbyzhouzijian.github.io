@@ -134,7 +134,7 @@ html[data-theme="dark"] .cv-table {
       <i class="fas fa-download"></i> Download PDF
     </a>
     <a href="#" onclick="togglePreview(); return false;" class="cv-button">
-      <i class="fas fa-eye"></i> Show Preview
+      <i class="fas fa-eye-slash"></i> Hide Preview
     </a>
   </div>
 </div>

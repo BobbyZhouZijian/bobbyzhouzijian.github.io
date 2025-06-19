@@ -241,6 +241,9 @@ function togglePreview() {
 **Conference Reviewing**
 - NeurIPS (2025)
 
+**Journal Reviewing**
+- TMLR (2025)
+
 
 <!-- 
 ## Talks and Presentations

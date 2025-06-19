@@ -181,7 +181,7 @@ function togglePreview() {
       <td>2023 – present</td>
     </tr>
     <tr>
-      <td><strong>B.Comp. (1st Class Hons) in Computer Science</strong></td>
+      <td><strong>B.Comp. (1st Class Hons) in Computer Science</strong> w. 2nd major in Mathematics</td>
       <td>National University of Singapore</td>
       <td>GPA: 4.92 / 5.00</td>
       <td>2019 – 2023</td>

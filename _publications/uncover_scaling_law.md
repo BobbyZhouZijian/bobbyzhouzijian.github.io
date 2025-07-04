@@ -4,7 +4,7 @@ collection: publications
 category: manuscripts
 permalink: /publication/uncover_scaling_law
 excerpt: '<img src="/images/uncover_scaling_law.png" alt="Uncover Scaling Law Paper Demo" style="width: 100%; height: auto; margin: 1px auto; display: block; border-radius: 8px;">'
-date: 2024-06-20
+date: 2025-06-20
 venue: 'Under Review at ARR'
 slidesurl: # 'http://academicpages.github.io/files/slides2.pdf'
 paperurl: 'https://openreview.net/forum?id=dXdfXhp6rk#discussion'

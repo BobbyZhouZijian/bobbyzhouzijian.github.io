@@ -1,5 +1,5 @@
 ---
-title: "Data-Centric AI in the Age of Large Language Models"
+title: "Uncover Scaling Laws for Large Language Models via Inverse Problems"
 collection: publications
 category: manuscripts
 permalink: /publication/uncover_scaling_law

@@ -16,7 +16,10 @@ body {
   padding: $masthead-height 0 0;
   padding-bottom: 9em;
   font-family: $global-font-family;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -25,19 +28,25 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 2em 0 0.5em;
-  line-height: 1.2;
+  margin: 1.75em 0 0.5em;
+  line-height: 1.3;
   font-family: $header-font-family;
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--global-text-color);
+  letter-spacing: -0.02em;
 }
 
 h1 {
   margin-top: 0;
-  font-size: $type-size-3;
+  font-size: $type-size-2;
+  letter-spacing: -0.03em;
 }
 
 h2 {
   font-size: $type-size-4;
+  margin-top: 2em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--global-border-color);
 }
 
 h3 {
@@ -54,6 +63,9 @@ h5 {
 
 h6 {
   font-size: $type-size-6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--global-text-color-light);
 }
 
 small, .small {
@@ -61,7 +73,8 @@ small, .small {
 }
 
 p {
-  margin-bottom: 1.3em;
+  margin-bottom: 1.5em;
+  line-height: 1.75;
 }
 
 u,
@@ -97,13 +110,20 @@ abbr[data-original-title] {
 
 blockquote {
   margin: 2em 1em 2em 0;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 1em 1.5em;
   font-style: italic;
-  border-left: 0.25em solid var(--global-border-color);
+  border-left: 4px solid var(--accent-blue);
+  background: var(--accent-blue-subtle);
+  border-radius: 0 $border-radius $border-radius 0;
+
+  p {
+    margin-bottom: 0.75em;
+  }
 
   cite {
     font-style: italic;
+    font-size: $type-size-6;
+    color: var(--global-text-color-light);
 
     &:before {
       content: "\2014";
@@ -115,6 +135,10 @@ blockquote {
 /* links */
 
 a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
   &:focus {
     @extend %tab-focus;
   }
@@ -133,6 +157,8 @@ tt, code, kbd, samp, pre {
 
 pre {
   overflow-x: auto; /* add scrollbars to wide code blocks*/
+  padding: 1em;
+  border-radius: $border-radius;
 }
 
 a > code,
@@ -140,34 +166,36 @@ figcaption > code,
 li > code,
 p > code,
 td > code {
-  color: var(--global-code-text-color);
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
-  font-size: $type-size-6;
-  background: var(--global-code-background-color);
-  border: 1px solid var(--global-thead-color);
+  color: var(--accent-blue);
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-size: $type-size-7;
+  font-weight: 400;
+  background: var(--accent-blue-subtle);
+  border: 1px solid var(--accent-blue);
   border-radius: $border-radius;
-  box-shadow: $box-shadow;
-
-  &:before, &:after {
-    letter-spacing: -0.2em;
-    content: "\00a0"; /* non-breaking space*/
-  }
 }
 
 a > code {
     color: inherit;
+    background: var(--global-code-background-color);
+    border-color: var(--global-thead-color);
 }
 
 pre > code {
   color: var(--global-code-text-color);
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 /* horizontal rule */
 
 hr {
   display: block;
-  margin: 1em 0;
+  margin: 2em 0;
   border: 0;
   border-top: 1px solid var(--global-border-color);
 }
@@ -177,6 +205,7 @@ hr {
 ul li,
 ol li {
   margin-bottom: 0.5em;
+  line-height: 1.7;
 }
 
 li ul,
@@ -209,8 +238,12 @@ figure {
   img {
     width: 100%;
     border-radius: $border-radius;
-    -webkit-transition: $global-transition;
-    transition: $global-transition;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
   }
 
   > a {
@@ -248,20 +281,21 @@ figure {
 
 figcaption {
   margin-bottom: 0.5em;
+  margin-top: 0.5em;
   color: var(--global-fig-caption-color);
   font-family: $caption-font-family;
   font-size: $type-size-6;
+  line-height: 1.5;
 
   a {
-    color: inherit;
+    color: var(--accent-blue);
     text-decoration: none;
-    border-bottom: 1px solid var(--global-border-color );
-    -webkit-transition: $global-transition;
-    transition: $global-transition;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 
     &:hover {
-      color: #000;
-      border-bottom-color: #000;
+      border-bottom-color: var(--accent-blue);
     }
   }
 }
@@ -324,25 +358,29 @@ nav {
    @-webkit-keyframes intro {
     0% {
       opacity: 0;
+      transform: translateY(10px);
     }
     100% {
       opacity: 1;
+      transform: translateY(0);
     }
   }
-  
+
   @keyframes intro {
     0% {
       opacity: 0;
+      transform: translateY(10px);
     }
     100% {
       opacity: 1;
+      transform: translateY(0);
     }
   }
 
 /* Global animation transition */
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, form button, input[type="submit"], .btn, .highlight, .archive__item-teaser {
-  -webkit-transition: $global-transition;
-  transition: $global-transition;
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ==========================================================================

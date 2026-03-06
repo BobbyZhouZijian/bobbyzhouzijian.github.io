@@ -5,7 +5,7 @@ category: conferences
 permalink: /publication/mem1
 excerpt: '<img src="/images/mem1.jpg" alt="MEM1 visualization" style="width: 100%; height: auto; margin: 1px auto; display: block; border-radius: 8px;">'
 date: 2025-06-01
-venue: 'COLM 2025 Workshop RAM2 (Oral)'
+venue: 'ICLR 2026'
 paperurl: 'https://arxiv.org/abs/2506.15841'
 bibtexurl: 'https://bobbyzhouzijian.github.io/files/mem1.bib'
 citation: # 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'

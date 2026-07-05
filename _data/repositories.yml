@@ -1,0 +1,12 @@
+github_users:
+  - bobbyzhouzijian
+
+repo_description_lines_max: 2
+
+github_repos:
+  - electron-shaders/MineDraft
+  - Human-Agent-Society/Coral
+  - MIT-MI/MEM1
+  - ZhaoxuanWu/Tetris
+  - BobbyZhouZijian/detail_release
+  - BobbyZhouZijian/ProbablyApproximateShapleyFairness

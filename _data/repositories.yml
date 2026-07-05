@@ -3,10 +3,36 @@ github_users:
 
 repo_description_lines_max: 2
 
+# Static repo cards (no external card service).
+# stars is a manual snapshot — update occasionally or ask Claude to refresh.
 github_repos:
-  - electron-shaders/MineDraft
-  - Human-Agent-Society/Coral
-  - MIT-MI/MEM1
-  - ZhaoxuanWu/Tetris
-  - BobbyZhouZijian/detail_release
-  - BobbyZhouZijian/ProbablyApproximateShapleyFairness
+  - name: Human-Agent-Society/CORAL
+    url: https://github.com/Human-Agent-Society/Coral
+    description: Robust, lightweight infrastructure for multi-agent autonomous self-evolution, built for autoresearch. Works with Claude Code, Codex, Cursor, and more.
+    language: Python
+    stars: 774
+  - name: MIT-MI/MEM1
+    url: https://github.com/MIT-MI/MEM1
+    description: Learning to synergize memory and reasoning for efficient long-horizon agents (ICLR 2026).
+    language: Python
+    stars: 324
+  - name: electron-shaders/MineDraft
+    url: https://github.com/electron-shaders/MineDraft
+    description: A framework for batch parallel speculative decoding (ICML 2026).
+    language: Python
+    stars: 37
+  - name: ZhaoxuanWu/Tetris
+    url: https://github.com/ZhaoxuanWu/Tetris
+    description: Optimizes the total throughput of batch speculative decoding by strategically selecting draft tokens for verification (ACL 2025).
+    language: Python
+    stars: 8
+  - name: BobbyZhouZijian/detail_release
+    url: https://github.com/BobbyZhouZijian/detail_release
+    description: Official code for "DETAIL — Task DEmonsTration Attribution for Interpretable In-context Learning" (NeurIPS 2024).
+    language: Python
+    stars: 6
+  - name: BobbyZhouZijian/ProbablyApproximateShapleyFairness
+    url: https://github.com/BobbyZhouZijian/ProbablyApproximateShapleyFairness
+    description: Code for the AAAI 2023 oral paper "Probably Approximate Shapley Fairness with Applications in Machine Learning".
+    language: Python
+    stars: 4

@@ -8,7 +8,7 @@ repo_description_lines_max: 2
 github_repos:
   - name: Human-Agent-Society/CORAL
     url: https://github.com/Human-Agent-Society/Coral
-    description: Robust, lightweight infrastructure for multi-agent autonomous self-evolution, built for autoresearch. Works with Claude Code, Codex, Cursor, and more.
+    description: Robust, lightweight infrastructure for multi-agent autonomous self-evolution, built for autoresearch (COLM 2026). Works with Claude Code, Codex, Cursor, and more.
     language: Python
     stars: 774
   - name: MIT-MI/MEM1

@@ -26,6 +26,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
+<style>
+  .post .social .contact-icons {
+    font-size: 2rem;
+  }
+</style>
+
 👋 Nice to meet you! My name is **Zijian (Bobby)**. I am a PhD candidate advised by [Bryan Kian Hsiang Low](https://www.comp.nus.edu.sg/~lowkh/research.html) at the National University of Singapore (NUS). Previously, I interned at MiniMax (Beijing), working on large language models, and was a research engineer at the Singapore-MIT Alliance for Research and Technology Centre (SMART) from 2023 to 2025, advised by [Daniela Rus](https://danielarus.csail.mit.edu/) at MIT. Prior to my PhD, I completed my undergraduate studies at NUS, majoring in Computer Science and Mathematics, and interned at TikTok (Singapore) as an ML engineer on the advertisement moderation team.
 
 My research began with a **game-theoretic perspective** on machine learning: how to **value, curate, and attribute data** to make learning more reliable, fair, and efficient. I now study how **language agents learn from experience and improve over time**, through reinforcement learning, adaptive environments, memory, and collaboration.

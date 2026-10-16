@@ -61,8 +61,21 @@ if (/gem 'al_math',\s*:git =>/.test(gemfile)) {
   failures.push("`Gemfile` must not use git-branch pin for `al_math`; use released gem version.");
 }
 
+// This site's reviewed bibliography override keeps its author visible. All other
+// core paths remain gem-owned; the upgrade override audit checks hashes/version drift.
+const overrideManifest = exists(".al-folio-overrides.yml") ? read(".al-folio-overrides.yml") : "";
+const bibOverrideRecord = overrideManifest.match(/^  _layouts\/bib\.liquid:\r?\n((?:    [^\r\n]+(?:\r?\n|$))*)/m)?.[1] || "";
+const bibOverrideAcknowledged =
+  /^    owner: al_folio_core\r?$/m.test(bibOverrideRecord) &&
+  /^    upstream_path: _layouts\/bib\.liquid\r?$/m.test(bibOverrideRecord) &&
+  /^    acknowledged_at: ["']?\d{4}-\d{2}-\d{2}["']?\r?$/m.test(bibOverrideRecord);
+
 for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
   if (exists(forbiddenPath)) {
+    if (forbiddenPath === "_layouts" && bibOverrideAcknowledged && fs.lstatSync(path.join(root, forbiddenPath)).isDirectory()) {
+      const layouts = fs.readdirSync(path.join(root, forbiddenPath), { withFileTypes: true });
+      if (layouts.length === 1 && layouts[0].name === "bib.liquid" && layouts[0].isFile()) continue;
+    }
     failures.push(`Starter must not own core component path \`${forbiddenPath}\`; move ownership to the corresponding gem.`);
   }
 }

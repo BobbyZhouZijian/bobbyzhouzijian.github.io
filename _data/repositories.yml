@@ -3,34 +3,35 @@ github_users:
 
 repo_description_lines_max: 2
 
-# Static repo cards (no external card service).
-# stars is a manual snapshot — update occasionally or ask Claude to refresh.
+# Fallback counts for offline/no-JavaScript visitors.
+# The repositories page refreshes these via GitHub, with a 30-minute browser cache.
+stars_updated_at: "2026-10-16T09:02:12Z"
 github_repos:
   - name: Human-Agent-Society/reef
     url: https://github.com/Human-Agent-Society/reef
     description: Infrastructure for continually self-improving agents. Connects live interactions, feedback, and continual learning to improve model weights and agent harnesses.
     language: Python
-    stars: 7611 # snapshot: 2026-10-16
+    stars: 7611
   - name: spade-rl/spade
     url: https://github.com/spade-rl/spade
     description: Official code for SPADE, a self-play framework that jointly learns to generate executable environments and solve them (arXiv, 2026).
     language: Python
-    stars: 122 # snapshot: 2026-10-16
+    stars: 122
   - name: Human-Agent-Society/CORAL
     url: https://github.com/Human-Agent-Society/Coral
     description: Robust, lightweight infrastructure for multi-agent autonomous self-evolution, built for autoresearch (COLM 2026). Works with Claude Code, Codex, Cursor, and more.
     language: Python
-    stars: 774
+    stars: 1072
   - name: MIT-MI/MEM1
     url: https://github.com/MIT-MI/MEM1
     description: Learning to synergize memory and reasoning for efficient long-horizon agents (ICLR 2026).
     language: Python
-    stars: 324
+    stars: 344
   - name: electron-shaders/MineDraft
     url: https://github.com/electron-shaders/MineDraft
     description: A framework for batch parallel speculative decoding (ICML 2026).
     language: Python
-    stars: 37
+    stars: 42
   - name: ZhaoxuanWu/Tetris
     url: https://github.com/ZhaoxuanWu/Tetris
     description: Optimizes the total throughput of batch speculative decoding by strategically selecting draft tokens for verification (ACL 2025).
@@ -45,4 +46,4 @@ github_repos:
     url: https://github.com/BobbyZhouZijian/ProbablyApproximateShapleyFairness
     description: Code for the AAAI 2023 oral paper "Probably Approximate Shapley Fairness with Applications in Machine Learning".
     language: Python
-    stars: 4
+    stars: 5

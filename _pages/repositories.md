@@ -66,7 +66,7 @@ nav_order: 3
     <div class="repo-card-desc">{{ repo.description }}</div>
     <div class="repo-card-meta">
       <span><span class="repo-lang-dot"></span>{{ repo.language }}</span>
-      <span>&#9733; {{ repo.stars }}</span>
+      <span data-github-repo="{{ repo.name | escape }}" data-stars-updated-at="{{ site.data.repositories.stars_updated_at | escape }}" title="GitHub stars · snapshot {{ site.data.repositories.stars_updated_at | date: '%Y-%m-%d' }}">&#9733; <span data-star-count>{{ repo.stars }}</span></span>
     </div>
   </div>
   {% endfor %}
@@ -75,3 +75,5 @@ nav_order: 3
 <p style="margin-top: 1.5rem">
   More on my <a href="https://github.com/bobbyzhouzijian" target="_blank" rel="noopener noreferrer">GitHub profile</a>.
 </p>
+
+<script defer src="{{ '/assets/js/repository-stars.js' | relative_url }}"></script>
